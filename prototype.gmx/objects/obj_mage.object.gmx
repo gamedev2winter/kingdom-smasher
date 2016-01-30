@@ -98,7 +98,7 @@
           </argument>
           <argument>
             <kind>0</kind>
-            <string>1</string>
+            <string>2</string>
           </argument>
         </arguments>
       </action>
@@ -121,8 +121,15 @@
           <argument>
             <kind>1</kind>
             <string>with(instance_create(x+8,y+33,obj_iceball)){
-    speed = 5;
-    direction = random(160)+190;
+    speed = 8;
+    var randomDirection;
+    if(obj_player1.x &gt;= room_width/2){
+        randomDirection = random(room_width/2);
+        direction = point_direction(x,y,randomDirection,obj_player1.y);
+    }else{
+        randomDirection = random(room_width/2)+room_width/2;
+        direction = point_direction(x,y,randomDirection,obj_player1.y);
+    }
 }
 time_ball = random(50)+20;
 </string>

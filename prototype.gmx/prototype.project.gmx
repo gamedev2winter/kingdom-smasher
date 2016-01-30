@@ -29,6 +29,8 @@
       <sprite>sprites\sp_mage</sprite>
       <sprite>sprites\sp_archer</sprite>
     </sprites>
+    <sprite>sprites\sprite12</sprite>
+    <sprite>sprites\sprite13</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\grass4</background>
@@ -42,8 +44,8 @@
     <object>objects\obj_iceball</object>
     <object>objects\obj_fireball</object>
     <object>objects\obj_block</object>
-    <object>objects\obj_player1</object>
     <object>objects\obj_player2</object>
+    <object>objects\obj_player1</object>
     <object>objects\obj_wall</object>
     <object>objects\obj_mage</object>
     <object>objects\obj_archer</object>
