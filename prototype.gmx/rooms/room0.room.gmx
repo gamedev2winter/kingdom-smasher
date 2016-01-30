@@ -248,9 +248,7 @@
     <instance objName="obj_block" x="1040" y="48" name="inst_E54A5DF5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_block" x="1056" y="32" name="inst_8A5D667E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_block" x="1120" y="64" name="inst_9F06CD05" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_archer" x="576" y="128" name="inst_F08B71E1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_block" x="64" y="32" name="inst_8ADC33FE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_mage" x="256" y="288" name="inst_8240175C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_knigth" x="864" y="288" name="inst_4BA12F60" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="1120" y="-32" name="inst_12AA1CA8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="1184" y="-32" name="inst_4C79DB1A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
