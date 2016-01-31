@@ -98,7 +98,7 @@
           </argument>
           <argument>
             <kind>0</kind>
-            <string>2</string>
+            <string>1</string>
           </argument>
         </arguments>
       </action>
@@ -146,7 +146,7 @@
             <kind>1</kind>
             <string>with(instance_create(x+8,y+33,obj_fireball)){
     speed = 5;
-    direction = random(160)+190;
+    direction = point_direction(x,y,obj_player1.x, obj_player1.y);
 }
 time_ball = random(150)+20;
 </string>
@@ -490,36 +490,6 @@ time_ball = random(150)+20;
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
-      </action>
-    </event>
-    <event eventtype="8" enumb="64">
-      <action>
-        <libid>1</libid>
-        <id>613</id>
-        <kind>0</kind>
-        <userelative>-1</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_draw_variable</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>-1</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>0</kind>
-            <string>life</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>11</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>-14</string>
-          </argument>
-        </arguments>
       </action>
     </event>
   </events>
