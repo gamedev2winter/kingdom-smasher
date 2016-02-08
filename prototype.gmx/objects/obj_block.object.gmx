@@ -91,6 +91,65 @@
     <event eventtype="4" ename="obj_ball">
       <action>
         <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>var count = 0;
+
+if(instance_position(x-32, y, obj_block)){
+    
+    count =  count + 1;
+    position_destroy(x-32, y);
+
+}
+
+if(instance_position(x+32, y, obj_block)){
+
+    count = count + 1;    
+    position_destroy(x+32, y);
+
+}
+
+if(count &lt; 2) {
+
+        if(instance_position(x-16, y+16, obj_block)){
+        
+            count = count + 1;
+            position_destroy(x-16, y+16);
+        
+        }
+
+}
+
+if(count &lt; 2) {
+
+    if(instance_position(x+16, y+16, obj_block)) {
+
+        position_destroy(x+16, y+16);
+
+    }
+
+}
+
+count = 0;
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
         <id>115</id>
         <kind>0</kind>
         <userelative>0</userelative>
