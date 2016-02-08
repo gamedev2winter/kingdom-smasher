@@ -17,19 +17,20 @@
       <sprite>sprites\sp_normalball</sprite>
       <sprite>sprites\sp_fireball</sprite>
       <sprite>sprites\sp_iceball</sprite>
+      <sprite>sprites\sp_powerball</sprite>
     </sprites>
     <sprites name="States">
       <sprite>sprites\sp_antiMage</sprite>
       <sprite>sprites\sp_antiKnight</sprite>
       <sprite>sprites\sp_player2</sprite>
       <sprite>sprites\sp_antiArcher</sprite>
+      <sprite>sprites\sp_shootingPower</sprite>
     </sprites>
     <sprites name="Enemies">
       <sprite>sprites\sp_knight</sprite>
       <sprite>sprites\sp_mage</sprite>
       <sprite>sprites\sp_archer</sprite>
     </sprites>
-    <sprite>sprites\sprite12</sprite>
     <sprite>sprites\sprite13</sprite>
   </sprites>
   <backgrounds name="background">
@@ -43,14 +44,15 @@
     <object>objects\obj_ball</object>
     <object>objects\obj_iceball</object>
     <object>objects\obj_fireball</object>
-    <object>objects\obj_block</object>
-    <object>objects\obj_player2</object>
+    <object>objects\obj_powerball</object>
     <object>objects\obj_player1</object>
-    <object>objects\obj_wall</object>
     <object>objects\obj_mage</object>
     <object>objects\obj_archer</object>
     <object>objects\obj_knigth</object>
+    <object>objects\obj_block</object>
+    <object>objects\obj_wall</object>
     <object>objects\obj_controller</object>
+    <object>objects\obj_player2</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>

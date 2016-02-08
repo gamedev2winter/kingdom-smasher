@@ -26,6 +26,9 @@
           <argument>
             <kind>1</kind>
             <string>player_sprite = 1;
+power_count = 0;
+power_munition = 9;
+power_up = false;
 </string>
           </argument>
         </arguments>
@@ -48,15 +51,21 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if keyboard_check(ord('D')){
+            <string>if (keyboard_check(ord('D'))){
     hspeed = 8;
     direction = 0;
-}else if keyboard_check(ord('A')){
+}else if (keyboard_check(ord('A'))){
     hspeed = 8;
     direction = 180;
 }else{
     direction = 0;
     speed = 0;
+}
+
+if (power_count &gt;= 5){
+    sprite_index = sp_shootingPower;
+    power_up = true;
+    power_count = 0;
 }
 
 </string>
@@ -178,6 +187,29 @@
           <argument>
             <kind>3</kind>
             <string>0</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(!power_up){
+    power_count++;
+}
+</string>
           </argument>
         </arguments>
       </action>
@@ -1185,6 +1217,41 @@ if (player_sprite == 3){
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
+      </action>
+    </event>
+    <event eventtype="9" enumb="32">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(power_up &amp;&amp; power_munition&gt;=0){
+    with(instance_create(x+8,y-2,obj_powerball)){
+        speed = 7;
+        direction = 90;
+    }
+    power_munition--;
+}
+
+if(power_munition &lt; 0){
+    power_up = false;
+    power_munition = 9;
+    sprite_index = sp_antiArcher;
+}
+</string>
+          </argument>
+        </arguments>
       </action>
     </event>
   </events>
