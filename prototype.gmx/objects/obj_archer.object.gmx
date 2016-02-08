@@ -144,7 +144,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>with(instance_create(x+8,y+33,obj_fireball)){
+            <string>
+with(instance_create(x+8,y+33,obj_fireball)){
     speed = 5;
     direction = point_direction(x,y,obj_player1.x, obj_player1.y);
 }

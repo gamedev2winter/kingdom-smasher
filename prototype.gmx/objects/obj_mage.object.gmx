@@ -11,51 +11,6 @@
     <event eventtype="0" enumb="0">
       <action>
         <libid>1</libid>
-        <id>611</id>
-        <kind>6</kind>
-        <userelative>-1</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>time_ball</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>0</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>time_ball = random(50);
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
         <id>301</id>
         <kind>0</kind>
         <userelative>-1</userelative>
@@ -70,35 +25,11 @@
         <arguments>
           <argument>
             <kind>0</kind>
-            <string>time_ball</string>
+            <string>30</string>
           </argument>
           <argument>
             <kind>4</kind>
             <string>0</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>611</id>
-        <kind>6</kind>
-        <userelative>-1</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>life</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>2</string>
           </argument>
         </arguments>
       </action>
@@ -122,6 +53,7 @@
             <kind>1</kind>
             <string>with(instance_create(x+8,y+33,obj_iceball)){
     speed = 8;
+    originalSpeed = speed;
     var randomDirection;
     if(obj_player1.x &gt;= room_width/2){
         randomDirection = random(room_width/2);
@@ -131,7 +63,12 @@
         direction = point_direction(x,y,randomDirection,obj_player1.y);
     }
 }
-time_ball = random(50)+20;
+if(!global.slowMotion){
+    time_ball = 30;
+}else{
+    time_ball = 60;
+}
+
 </string>
           </argument>
         </arguments>

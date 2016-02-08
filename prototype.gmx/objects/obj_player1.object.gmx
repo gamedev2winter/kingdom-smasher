@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>player_sprite = 1;
+            <string>global.slowMotion = false;
+player_sprite = 1;
 power_count = 0;
 power_munition = 9;
 power_up = false;
@@ -862,29 +863,24 @@ if (player_sprite == 3){
       </action>
       <action>
         <libid>1</libid>
-        <id>541</id>
-        <kind>0</kind>
+        <id>603</id>
+        <kind>7</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
         <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_sprite_set</functionname>
+        <exetype>2</exetype>
+        <functionname></functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
-            <kind>5</kind>
-            <sprite>sp_antiArcher</sprite>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>0</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>1</string>
+            <kind>1</kind>
+            <string>sprite_index = sp_antiArcher;
+player_sprite = 3;
+global.slowMotion = false;
+</string>
           </argument>
         </arguments>
       </action>
@@ -909,30 +905,6 @@ if (player_sprite == 3){
           <argument>
             <kind>3</kind>
             <string>0</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>611</id>
-        <kind>6</kind>
-        <userelative>-1</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>player_sprite</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>3</string>
           </argument>
         </arguments>
       </action>
@@ -996,29 +968,23 @@ if (player_sprite == 3){
       </action>
       <action>
         <libid>1</libid>
-        <id>541</id>
-        <kind>0</kind>
+        <id>603</id>
+        <kind>7</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
         <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_sprite_set</functionname>
+        <exetype>2</exetype>
+        <functionname></functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
-            <kind>5</kind>
-            <sprite>sp_antiMage</sprite>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>0</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>1</string>
+            <kind>1</kind>
+            <string>sprite_index = sp_antiMage;
+player_sprite = 2;
+</string>
           </argument>
         </arguments>
       </action>
@@ -1043,30 +1009,6 @@ if (player_sprite == 3){
           <argument>
             <kind>3</kind>
             <string>0</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>611</id>
-        <kind>6</kind>
-        <userelative>-1</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>player_sprite</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>2</string>
           </argument>
         </arguments>
       </action>
@@ -1130,37 +1072,9 @@ if (player_sprite == 3){
       </action>
       <action>
         <libid>1</libid>
-        <id>541</id>
-        <kind>0</kind>
+        <id>603</id>
+        <kind>7</kind>
         <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_sprite_set</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>5</kind>
-            <sprite>sp_antiKnight</sprite>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>0</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>1</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>611</id>
-        <kind>6</kind>
-        <userelative>-1</userelative>
         <isquestion>0</isquestion>
         <useapplyto>-1</useapplyto>
         <exetype>2</exetype>
@@ -1172,11 +1086,10 @@ if (player_sprite == 3){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>player_sprite</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>1</string>
+            <string>sprite_index = sp_antiKnight;
+player_sprite = 1;
+global.slowMotion = false;
+</string>
           </argument>
         </arguments>
       </action>
@@ -1243,11 +1156,16 @@ if (player_sprite == 3){
     }
     power_munition--;
 }
-
 if(power_munition &lt; 0){
     power_up = false;
     power_munition = 9;
     sprite_index = sp_antiArcher;
+}
+
+if(!global.slowMotion &amp;&amp; player_sprite == 2){
+    global.slowMotion = true;
+}else{
+    global.slowMotion = false;
 }
 </string>
           </argument>
