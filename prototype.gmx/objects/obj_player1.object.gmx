@@ -25,11 +25,52 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.slowMotion = false;
-player_sprite = 1;
+            <string>player_sprite = 1;
+
+//Shooting Power
 power_count = 0;
 power_munition = 9;
 power_up = false;
+
+//slow Motion Power
+global.slowMotion = false;
+canSlowMotion = true;
+slowM_count = 15;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>slowM_count--;
+if(slowM_count &gt;= 5){
+    alarm[0] = 30;
+}else{
+    canSlowMotion = true;
+    slowM_count = 15;
+    with(obj_slowMIcon){
+        image_index = 0;
+    }
+}
+if(slowM_count == 10){
+    global.slowMotion = false;
+}
 </string>
           </argument>
         </arguments>
@@ -1132,6 +1173,33 @@ global.slowMotion = false;
         <isnot>0</isnot>
       </action>
     </event>
+    <event eventtype="8" enumb="64">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(!canSlowMotion){
+    draw_text(obj_slowMIcon.x+5, obj_slowMIcon.y+9, slowM_count-5);
+}else{
+    draw_text(obj_slowMIcon.x+5, obj_slowMIcon.y+9, " ");
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="9" enumb="32">
       <action>
         <libid>1</libid>
@@ -1162,10 +1230,13 @@ if(power_munition &lt; 0){
     sprite_index = sp_antiArcher;
 }
 
-if(!global.slowMotion &amp;&amp; player_sprite == 2){
+if(!global.slowMotion &amp;&amp; player_sprite == 2 &amp;&amp; canSlowMotion){
     global.slowMotion = true;
-}else{
-    global.slowMotion = false;
+    alarm[0] = 30;
+    canSlowMotion = false;
+    with(obj_slowMIcon){
+        image_index = 1;
+    }
 }
 </string>
           </argument>

@@ -120,7 +120,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>with(instance_create(x+8,y+33,obj_ball)){
+            <string>with(instance_create(x+32,y+65,obj_ball)){
     speed = 5;
     direction = random(160)+190;
 }
