@@ -1208,6 +1208,22 @@ player_sprite = 1;
         <isnot>0</isnot>
       </action>
     </event>
+    <event eventtype="5" enumb="79">
+      <action>
+        <libid>1</libid>
+        <id>331</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_restart_game</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
+    </event>
     <event eventtype="8" enumb="64">
       <action>
         <libid>1</libid>
@@ -1252,7 +1268,7 @@ player_sprite = 1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(power_up &amp;&amp; power_munition&gt;=0){
+            <string>if(power_up &amp;&amp; power_munition&gt;=0 &amp;&amp; player_sprite == 3){
     with(instance_create(x+8,y-2,obj_powerball)){
         speed = 7;
         originalSpeed = speed;
