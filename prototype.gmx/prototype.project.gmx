@@ -48,6 +48,7 @@
     <object>objects\obj_player1</object>
     <object>objects\obj_mage</object>
     <object>objects\obj_archer</object>
+    <object>objects\obj_knigth</object>
     <object>objects\obj_block</object>
     <object>objects\obj_wall</object>
     <object>objects\obj_controller</object>
