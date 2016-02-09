@@ -414,6 +414,7 @@
     <instance objName="obj_block" x="1152" y="864" name="inst_BBBE70C2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_archer" x="512" y="224" name="inst_E3E68A13" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="1164" y="-41" name="inst_A095FF81" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_knigth" x="160" y="352" name="inst_25A2EF55" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

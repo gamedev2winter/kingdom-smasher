@@ -25,19 +25,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-<<<<<<< HEAD
-            <string>player_sprite</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>1</string>
-=======
             <string>player_sprite = 1;
 power_count = 0;
 power_munition = 9;
 power_up = false;
 </string>
->>>>>>> master
           </argument>
         </arguments>
       </action>
