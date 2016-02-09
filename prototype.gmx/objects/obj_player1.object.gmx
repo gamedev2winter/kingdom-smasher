@@ -37,6 +37,7 @@ global.slowMotion = false;
 canSlowMotion = false;
 slowM_count = 15;
 slowMP_count = 0;
+cooldown = false;
 </string>
           </argument>
         </arguments>
@@ -63,8 +64,9 @@ slowMP_count = 0;
 if(slowM_count &gt;= 0){
     alarm[0] = 30;
 }else{
-    canSlowMotion = true;
     slowM_count = 15;
+    slowMP_count =0;
+    cooldown = false;
 }
 if(slowM_count == 10){
     global.slowMotion = false;
@@ -110,8 +112,15 @@ if (power_count &gt;= 5){
 
 if (slowMP_count &gt;= 5){
     canSlowMotion = true;
+    slowMP_count = 0;
     with(obj_slowMIcon){
         image_index = 0;
+    }
+}
+
+if(!canSlowMotion){
+    with(obj_slowMIcon){
+        image_index = 1;
     }
 }
 
@@ -507,7 +516,7 @@ if (player_sprite == 3){
         <arguments>
           <argument>
             <kind>6</kind>
-            <sound>snd_reflect</sound>
+            <sound>-100</sound>
           </argument>
           <argument>
             <kind>3</kind>
@@ -531,7 +540,7 @@ if (player_sprite == 3){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(!canSlowMotion){
+            <string>if(!canSlowMotion &amp;&amp; !cooldown){
     slowMP_count++;
 }
 </string>
@@ -1216,7 +1225,7 @@ player_sprite = 1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(!canSlowMotion){
+            <string>if(cooldown){
     draw_text(obj_slowMIcon.x+5, obj_slowMIcon.y+9, slowM_count);
 }else{
     draw_text(obj_slowMIcon.x+5, obj_slowMIcon.y+9, " ");
@@ -1260,6 +1269,7 @@ if(power_munition &lt; 0){
 if(!global.slowMotion &amp;&amp; player_sprite == 2 &amp;&amp; canSlowMotion){
     global.slowMotion = true;
     alarm[0] = 30;
+    cooldown = true;
     canSlowMotion = false;
     with(obj_slowMIcon){
         image_index = 1;
