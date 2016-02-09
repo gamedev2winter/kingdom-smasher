@@ -29,7 +29,7 @@
 direction = 180;
 speed = 5;
 originalSpeed = speed;
-time_ball = random(150);
+time_ball = 60;
 alarm[0] = time_ball;
 </string>
           </argument>
@@ -58,7 +58,11 @@ alarm[0] = time_ball;
     originalSpeed = speed;
     direction = point_direction(x,y,obj_player1.x, obj_player1.y);
 }
-time_ball = random(150)+20;
+if(!global.slowMotion){
+    time_ball = 60;
+}else{
+    time_ball = 100;
+}
 </string>
           </argument>
         </arguments>
