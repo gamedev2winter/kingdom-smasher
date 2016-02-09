@@ -13,6 +13,7 @@
   <sprites name="sprites">
     <sprite>sprites\sp_block</sprite>
     <sprite>sprites\sp_wall</sprite>
+    <sprite>sprites\sp_slowMotion</sprite>
     <sprites name="Ball">
       <sprite>sprites\sp_normalball</sprite>
       <sprite>sprites\sp_fireball</sprite>
@@ -31,7 +32,6 @@
       <sprite>sprites\sp_mage</sprite>
       <sprite>sprites\sp_archer</sprite>
     </sprites>
-    <sprite>sprites\sprite13</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\grass4</background>
@@ -48,13 +48,14 @@
     <object>objects\obj_player1</object>
     <object>objects\obj_mage</object>
     <object>objects\obj_archer</object>
-    <object>objects\obj_knigth</object>
     <object>objects\obj_block</object>
     <object>objects\obj_wall</object>
     <object>objects\obj_controller</object>
     <object>objects\obj_player2</object>
+    <object>objects\obj_slowMIcon</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\Level1</room>
     <room>rooms\room0</room>
     <room>rooms\room1</room>
     <room>rooms\room2</room>
