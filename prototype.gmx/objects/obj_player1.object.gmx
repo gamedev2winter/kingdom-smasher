@@ -34,8 +34,9 @@ power_up = false;
 
 //slow Motion Power
 global.slowMotion = false;
-canSlowMotion = true;
+canSlowMotion = false;
 slowM_count = 15;
+slowMP_count = 0;
 </string>
           </argument>
         </arguments>
@@ -59,14 +60,11 @@ slowM_count = 15;
           <argument>
             <kind>1</kind>
             <string>slowM_count--;
-if(slowM_count &gt;= 5){
+if(slowM_count &gt;= 0){
     alarm[0] = 30;
 }else{
     canSlowMotion = true;
     slowM_count = 15;
-    with(obj_slowMIcon){
-        image_index = 0;
-    }
 }
 if(slowM_count == 10){
     global.slowMotion = false;
@@ -108,6 +106,13 @@ if (power_count &gt;= 5){
     sprite_index = sp_shootingPower;
     power_up = true;
     power_count = 0;
+}
+
+if (slowMP_count &gt;= 5){
+    canSlowMotion = true;
+    with(obj_slowMIcon){
+        image_index = 0;
+    }
 }
 
 </string>
@@ -507,6 +512,29 @@ if (player_sprite == 3){
           <argument>
             <kind>3</kind>
             <string>0</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(!canSlowMotion){
+    slowMP_count++;
+}
+</string>
           </argument>
         </arguments>
       </action>
@@ -920,7 +948,6 @@ if (player_sprite == 3){
             <kind>1</kind>
             <string>sprite_index = sp_antiArcher;
 player_sprite = 3;
-global.slowMotion = false;
 </string>
           </argument>
         </arguments>
@@ -1129,7 +1156,6 @@ player_sprite = 2;
             <kind>1</kind>
             <string>sprite_index = sp_antiKnight;
 player_sprite = 1;
-global.slowMotion = false;
 </string>
           </argument>
         </arguments>
@@ -1191,7 +1217,7 @@ global.slowMotion = false;
           <argument>
             <kind>1</kind>
             <string>if(!canSlowMotion){
-    draw_text(obj_slowMIcon.x+5, obj_slowMIcon.y+9, slowM_count-5);
+    draw_text(obj_slowMIcon.x+5, obj_slowMIcon.y+9, slowM_count);
 }else{
     draw_text(obj_slowMIcon.x+5, obj_slowMIcon.y+9, " ");
 }
@@ -1220,6 +1246,7 @@ global.slowMotion = false;
             <string>if(power_up &amp;&amp; power_munition&gt;=0){
     with(instance_create(x+8,y-2,obj_powerball)){
         speed = 7;
+        originalSpeed = speed;
         direction = 90;
     }
     power_munition--;
