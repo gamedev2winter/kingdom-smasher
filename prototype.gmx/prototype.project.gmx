@@ -32,6 +32,7 @@
       <sprite>sprites\sp_mage</sprite>
       <sprite>sprites\sp_archer</sprite>
     </sprites>
+    <sprite>sprites\sp_heart</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\grass4</background>
