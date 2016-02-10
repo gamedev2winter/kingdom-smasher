@@ -38,6 +38,7 @@
     <background>background\Firstpage</background>
     <background>background\SecondPage</background>
     <background>background\ThirdPage</background>
+    <background>background\background4</background>
   </backgrounds>
   <paths name="paths"/>
   <objects name="objects">
@@ -56,9 +57,11 @@
     <object>objects\obj_slowMIcon</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\Level1</room>
-    <room>rooms\room0</room>
+    <room>rooms\ArcherLevel</room>
+    <room>rooms\MageLevel</room>
+    <room>rooms\KnigthLevel</room>
     <room>rooms\room1</room>
+    <room>rooms\room0</room>
     <room>rooms\room2</room>
     <room>rooms\room3</room>
   </rooms>

@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>player_sprite = 1;
+pSpeed = 8;
 
 //Shooting Power
 power_count = 0;
@@ -94,14 +95,14 @@ if(slowM_count == 10){
           <argument>
             <kind>1</kind>
             <string>if (keyboard_check(ord('D'))){
-    hspeed = 8;
+    hspeed = pSpeed;
     direction = 0;
 }else if (keyboard_check(ord('A'))){
-    hspeed = 8;
+    hspeed = pSpeed;
     direction = 180;
 }else{
     direction = 0;
-    speed = 0;
+    hspeed = 0;
 }
 
 if (power_count &gt;= 5){
@@ -122,6 +123,12 @@ if(!canSlowMotion){
     with(obj_slowMIcon){
         image_index = 1;
     }
+}
+
+if(player_sprite == 1){
+    pSpeed = 12;
+}else{
+    pSpeed = 8;
 }
 
 </string>
@@ -769,6 +776,27 @@ if (player_sprite == 3){
       </action>
       <action>
         <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>other</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>originalSpeed += 5;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
         <id>101</id>
         <kind>0</kind>
         <userelative>-1</userelative>
@@ -1241,10 +1269,12 @@ player_sprite = 1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(cooldown){
-    draw_text(obj_slowMIcon.x+5, obj_slowMIcon.y+9, slowM_count);
-}else{
-    draw_text(obj_slowMIcon.x+5, obj_slowMIcon.y+9, " ");
+            <string>if(instance_exists(obj_slowMIcon)){
+    if(cooldown){
+        draw_text(obj_slowMIcon.x+5, obj_slowMIcon.y+9, slowM_count);
+    }else{
+        draw_text(obj_slowMIcon.x+5, obj_slowMIcon.y+9, " ");
+    }
 }
 </string>
           </argument>
@@ -1270,7 +1300,7 @@ player_sprite = 1;
             <kind>1</kind>
             <string>if(power_up &amp;&amp; power_munition&gt;=0 &amp;&amp; player_sprite == 3){
     with(instance_create(x+8,y-2,obj_powerball)){
-        speed = 7;
+        speed = 9;
         originalSpeed = speed;
         direction = 90;
     }

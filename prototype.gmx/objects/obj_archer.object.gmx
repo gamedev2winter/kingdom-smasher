@@ -31,6 +31,10 @@ speed = 5;
 originalSpeed = speed;
 time_ball = 60;
 alarm[0] = time_ball;
+
+image_speed = 0;
+hit = false;
+hitCount = 0;
 </string>
           </argument>
         </arguments>
@@ -113,6 +117,17 @@ if(!global.slowMotion){
     speed = originalSpeed/2;
 }else{
     speed = originalSpeed;
+}
+
+if(hit){
+    hitCount++;
+    image_index = 1;
+}else{
+    image_index = 0;
+}
+
+if(hitCount &gt;= 10){
+    hit = false;
 }
 </string>
           </argument>
