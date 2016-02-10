@@ -385,7 +385,7 @@ if(hitCount &gt;= 10){
         <arguments>
           <argument>
             <kind>2</kind>
-            <string>You Win!</string>
+            <string>Level Complete!</string>
           </argument>
         </arguments>
       </action>
@@ -725,7 +725,7 @@ if(hitCount &gt;= 10){
         <arguments>
           <argument>
             <kind>2</kind>
-            <string>You Win!</string>
+            <string>Level Complete!</string>
           </argument>
         </arguments>
       </action>
@@ -1065,7 +1065,7 @@ if(hitCount &gt;= 10){
         <arguments>
           <argument>
             <kind>2</kind>
-            <string>You Win!</string>
+            <string>Level Complete!</string>
           </argument>
         </arguments>
       </action>

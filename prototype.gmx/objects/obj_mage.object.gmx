@@ -301,7 +301,7 @@ if(life &lt;=0){
         <arguments>
           <argument>
             <kind>2</kind>
-            <string>You Win!</string>
+            <string>Level Complete!</string>
           </argument>
         </arguments>
       </action>
@@ -572,7 +572,7 @@ if(life &lt;=0){
         <arguments>
           <argument>
             <kind>2</kind>
-            <string>You Win!</string>
+            <string>Level Complete</string>
           </argument>
         </arguments>
       </action>
@@ -843,7 +843,7 @@ if(life &lt;=0){
         <arguments>
           <argument>
             <kind>2</kind>
-            <string>You Win!</string>
+            <string>Level Complete!</string>
           </argument>
         </arguments>
       </action>
