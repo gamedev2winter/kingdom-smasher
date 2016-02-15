@@ -28,6 +28,7 @@
             <string>player_sprite = 1;
 pSpeed = 8;
 life = 3;
+image_speed = 0;
 
 //Shooting Power
 power_count = 0;
@@ -116,12 +117,15 @@ if(slowM_count == 10){
           <argument>
             <kind>1</kind>
             <string>if (keyboard_check(ord('D'))){
+    image_index = 2;
     hspeed = pSpeed;
     direction = 0;
 }else if (keyboard_check(ord('A'))){
+    image_index = 1;
     hspeed = pSpeed;
     direction = 180;
 }else{
+    image_index = 0;
     direction = 0;
     hspeed = 0;
 }
