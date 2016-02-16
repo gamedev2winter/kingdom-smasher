@@ -10,6 +10,8 @@
     <sound>sound\snd_battle</sound>
     <sound>sound\snd_pageTurn</sound>
     <sound>sound\snd_StoryBook</sound>
+    <sound>sound\snd_battle2</sound>
+    <sound>sound\snd_battle3</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\sp_block</sprite>
@@ -41,6 +43,7 @@
     <background>background\SecondPage</background>
     <background>background\ThirdPage</background>
     <background>background\background4</background>
+    <background>background\MainScreen</background>
   </backgrounds>
   <paths name="paths"/>
   <objects name="objects">
@@ -57,10 +60,12 @@
     <object>objects\obj_controller</object>
     <object>objects\obj_player2</object>
     <object>objects\obj_slowMIcon</object>
+    <object>objects\obj_mainControler</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\Start</room>
+    <room>rooms\StoryPages</room>
     <room>rooms\KnigthLevel</room>
-    <room>rooms\room1</room>
     <room>rooms\ArcherLevel</room>
     <room>rooms\MageLevel</room>
     <room>rooms\room0</room>

@@ -41,6 +41,7 @@ canSlowMotion = false;
 slowM_count = 15;
 slowMP_count = 0;
 cooldown = false;
+
 </string>
           </argument>
         </arguments>
@@ -62,6 +63,30 @@ cooldown = false;
           <argument>
             <kind>0</kind>
             <string>3</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>211</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_sound</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>6</kind>
+            <sound>snd_battle2</sound>
+          </argument>
+          <argument>
+            <kind>3</kind>
+            <string>0</string>
           </argument>
         </arguments>
       </action>
@@ -154,6 +179,14 @@ if(player_sprite == 1){
     pSpeed = 12;
 }else{
     pSpeed = 8;
+}
+
+if(!instance_exists(obj_knigth) &amp;&amp; !instance_exists(obj_mage)&amp;&amp; !instance_exists(obj_archer)){
+    show_message("Level Complete!");
+    if (room_next(room) != -1){
+        sound_stop(snd_battle2);
+        room_goto(room_next(room));
+    }
 }
 
 </string>
