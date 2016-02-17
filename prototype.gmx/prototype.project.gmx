@@ -45,6 +45,8 @@
     <background>background\ThirdPage</background>
     <background>background\background4</background>
     <background>background\MainScreen</background>
+    <background>background\snow</background>
+    <background>background\volcano</background>
   </backgrounds>
   <paths name="paths"/>
   <objects name="objects">
@@ -62,6 +64,7 @@
     <object>objects\obj_player2</object>
     <object>objects\obj_slowMIcon</object>
     <object>objects\obj_mainControler</object>
+    <object>objects\obj_fader</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\Start</room>

@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>originalSpeed = 5;
+            <string>reflected = false;
+originalSpeed = 5;
 </string>
           </argument>
         </arguments>
@@ -53,27 +54,8 @@
 }else{
     speed = originalSpeed;
 }
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if(y &lt; 0) {
+
+if(y &lt; 0) {
     show_message("Level Complete!");
     if room_next(room) != -1{
         room_goto(room_next(room));
@@ -82,6 +64,7 @@
 
 if(y &gt; 896) {
     show_message("You Lose!");
+    room_restart();
 }
 </string>
           </argument>

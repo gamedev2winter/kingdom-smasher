@@ -47,10 +47,16 @@ cooldown = false;
 
 audio_stop_all();
 if(room_get_name(room) == "KnigthLevel" || room_get_name(room) == "ArcherLevel"){
+    audio_sound_gain(snd_battle2,0,0);
+    audio_sound_gain(snd_battle2,1,4000);
     audio_play_sound(snd_battle2,5,true);
 } else if(room_get_name(room) == "MageLevel"){
+    audio_sound_gain(snd_battle3,0,0);
+    audio_sound_gain(snd_battle3,1,4000);
     audio_play_sound(snd_battle3,5,true);
 } else if(room_get_name(room) == "FinalLevel"){
+    audio_sound_gain(snd_battle,0,0);
+    audio_sound_gain(snd_battle,1,4000);
     audio_play_sound(snd_battle,5,true);
 }
 
