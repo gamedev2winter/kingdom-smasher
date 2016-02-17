@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>life = 2;
+            <string>life = 1;
 direction = 180;
 speed = 5;
 originalSpeed = speed;

@@ -68,7 +68,7 @@
     <room>rooms\KnigthLevel</room>
     <room>rooms\ArcherLevel</room>
     <room>rooms\MageLevel</room>
-    <room>rooms\room0</room>
+    <room>rooms\FinalLevel</room>
   </rooms>
   <constants number="2">
     <constant name="GM_build_date">42394.8725814468</constant>
