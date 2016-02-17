@@ -47,6 +47,7 @@
     <background>background\MainScreen</background>
     <background>background\snow</background>
     <background>background\volcano</background>
+    <background>background\FirstAct</background>
   </backgrounds>
   <paths name="paths"/>
   <objects name="objects">
