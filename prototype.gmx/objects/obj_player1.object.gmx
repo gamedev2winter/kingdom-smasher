@@ -28,6 +28,9 @@
             <string>player_sprite = 1;
 pSpeed = 8;
 life = 3;
+hit = false;
+hitCount = 0;
+
 image_speed = 0;
 
 //Shooting Power
@@ -139,6 +142,19 @@ if(slowM_count == 10){
     direction = 0;
     hspeed = 0;
 }
+
+if(hit){
+    hitCount++;
+    image_index = 3;
+}else{
+    image_index = 0;
+}
+
+if(hitCount &gt;=10){
+    hitCount = 0;
+    hit = false;
+}
+
 
 if (power_count &gt;= 5){
     sprite_index = sp_shootingPower;
@@ -385,6 +401,27 @@ with(other){
           <argument>
             <kind>0</kind>
             <string>-1</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>hit = true;
+</string>
           </argument>
         </arguments>
       </action>
@@ -699,6 +736,27 @@ with(other){
       </action>
       <action>
         <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>hit = true;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
         <id>203</id>
         <kind>0</kind>
         <userelative>0</userelative>
@@ -974,6 +1032,27 @@ direction = point_direction(obj_player1.x+32, obj_player1.y+32, x+16, y+16);
           <argument>
             <kind>0</kind>
             <string>-1</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>hit = true;
+</string>
           </argument>
         </arguments>
       </action>
@@ -1478,11 +1557,11 @@ player_sprite = 1;
         <arguments>
           <argument>
             <kind>0</kind>
-            <string>0</string>
+            <string>20</string>
           </argument>
           <argument>
             <kind>0</kind>
-            <string>60</string>
+            <string>800</string>
           </argument>
           <argument>
             <kind>5</kind>
