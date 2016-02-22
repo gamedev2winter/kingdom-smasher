@@ -415,9 +415,6 @@
     <instance objName="obj_eblock" x="1105" y="208" name="inst_DEBEBDF3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_eblock" x="1105" y="176" name="inst_406EE37B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_eblock" x="1137" y="176" name="inst_6929A15A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_heart" x="0" y="0" name="inst_7C2881CB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_heart" x="64" y="0" name="inst_3061CEBB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_heart" x="128" y="0" name="inst_51FB0C88" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_state1" x="864" y="0" name="inst_03852551" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_state2" x="960" y="0" name="inst_3495EE3E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_state3" x="1056" y="0" name="inst_7077AC33" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
