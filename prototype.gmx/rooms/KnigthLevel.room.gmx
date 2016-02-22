@@ -253,6 +253,7 @@
     <instance objName="obj_pblock" x="96" y="0" name="inst_14C67CBB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_pblock" x="32" y="0" name="inst_0C1EBEBE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_pblock" x="256" y="0" name="inst_AC272F42" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_enemiesController" x="0" y="32" name="inst_E55CA84D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

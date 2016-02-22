@@ -154,6 +154,9 @@ if(hitCount &gt;=10){
     hit = true;
     life--;
     if(life &lt;=0){
+        obj_enemiesController.magePosX = x;
+        obj_enemiesController.magePosY = y;
+        obj_enemiesController.mageDie = 1;
         instance_destroy();
     }
 }
@@ -183,6 +186,9 @@ if(hitCount &gt;=10){
     hit = true;
     life--;
     if(life &lt;=0){
+        obj_enemiesController.magePosX = x;
+        obj_enemiesController.magePosY = y;
+        obj_enemiesController.mageDie = 1;
         instance_destroy();
     }
 }
@@ -212,6 +218,9 @@ if(hitCount &gt;=10){
     hit = true;
     life--;
     if(life &lt;=0){
+        obj_enemiesController.magePosX = x;
+        obj_enemiesController.magePosY = y;
+        obj_enemiesController.mageDie = 1;
         instance_destroy();
     }
 }

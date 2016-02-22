@@ -67,6 +67,7 @@
     <object>objects\obj_slowMIcon</object>
     <object>objects\obj_mainControler</object>
     <object>objects\obj_fader</object>
+    <object>objects\obj_enemiesController</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\Start</room>
