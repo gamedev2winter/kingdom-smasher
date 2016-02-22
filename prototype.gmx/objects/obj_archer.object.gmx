@@ -185,6 +185,9 @@ if(hitCount &gt;= 15){
     hit = true;
     
     if(life == 0){
+        obj_enemiesController.archerPosX = x;
+        obj_enemiesController.archerPosY = y;
+        obj_enemiesController.archerDie = 1;
         instance_destroy();
     }
 }
@@ -214,6 +217,9 @@ if(hitCount &gt;= 15){
     life--;
     hit = true;
     if(life == 0){
+        obj_enemiesController.archerPosX = x;
+        obj_enemiesController.archerPosY = y;
+        obj_enemiesController.archerDie = 1;
         instance_destroy();
     }
 }
@@ -243,6 +249,9 @@ if(hitCount &gt;= 15){
     life--;
     hit = true;
     if(life == 0){
+        obj_enemiesController.archerPosX = x;
+        obj_enemiesController.archerPosY = y;
+        obj_enemiesController.archerDie = 1;
         instance_destroy();
     }
 }

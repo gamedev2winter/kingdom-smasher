@@ -71,10 +71,14 @@
     <object>objects\obj_slowMIcon</object>
     <object>objects\obj_mainControler</object>
     <object>objects\obj_fader</object>
+<<<<<<< HEAD
     <object>objects\obj_state1</object>
     <object>objects\obj_state2</object>
     <object>objects\obj_state3</object>
     <object>objects\obj_heart</object>
+=======
+    <object>objects\obj_enemiesController</object>
+>>>>>>> c43a5f8c9490fc8c239485547d73bdeda0a93c24
   </objects>
   <rooms name="rooms">
     <room>rooms\Start</room>

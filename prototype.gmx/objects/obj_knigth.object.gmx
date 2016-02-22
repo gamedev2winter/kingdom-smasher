@@ -156,6 +156,9 @@ if(hitCount == 10){
     life--;
     hit = true;
     if(life &lt;= 0){
+        obj_enemiesController.knigthPosX = x;
+        obj_enemiesController.knigthPosY = y;
+        obj_enemiesController.knigthDie = 1;
         instance_destroy();
     }
 }
@@ -185,6 +188,9 @@ if(hitCount == 10){
     life--;
     hit = true;
     if(life &lt;= 0){
+        obj_enemiesController.knigthPosX = x;
+        obj_enemiesController.knigthPosY = y;
+        obj_enemiesController.knigthDie = 1;
         instance_destroy();
     }
 }
@@ -214,6 +220,9 @@ if(hitCount == 10){
     life--;
     hit = true;
     if(life &lt;= 0){
+        obj_enemiesController.knigthPosX = x;
+        obj_enemiesController.knigthPosY = y;
+        obj_enemiesController.knigthDie = 1;
         instance_destroy();
     }
 }
