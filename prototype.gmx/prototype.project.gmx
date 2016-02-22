@@ -37,6 +37,9 @@
     </sprites>
     <sprite>sprites\sp_heart</sprite>
     <sprite>sprites\sp_enemyHeart</sprite>
+    <sprite>sprites\sp_state1</sprite>
+    <sprite>sprites\sp_state2</sprite>
+    <sprite>sprites\sp_state3</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\grass4</background>
@@ -48,6 +51,7 @@
     <background>background\snow</background>
     <background>background\volcano</background>
     <background>background\FirstAct</background>
+    <background>background\tile_ground</background>
   </backgrounds>
   <paths name="paths"/>
   <objects name="objects">
@@ -67,6 +71,10 @@
     <object>objects\obj_slowMIcon</object>
     <object>objects\obj_mainControler</object>
     <object>objects\obj_fader</object>
+    <object>objects\obj_state1</object>
+    <object>objects\obj_state2</object>
+    <object>objects\obj_state3</object>
+    <object>objects\obj_heart</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\Start</room>
