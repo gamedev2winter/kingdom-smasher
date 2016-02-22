@@ -30,7 +30,7 @@ hit = false;
 hitCount = 0;
 life = 2;
 
-alarm[0] = 30 + irandom(20);
+alarm[0] = irandom(40);
 </string>
           </argument>
         </arguments>

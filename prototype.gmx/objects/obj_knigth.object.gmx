@@ -29,7 +29,7 @@
 hit = false;
 hitCount = 0;
 life = 3;
-time_ball = 70+irandom(20);
+time_ball = irandom(70);
 
 alarm[0] = time_ball;
 </string>
