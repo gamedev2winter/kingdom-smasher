@@ -9,54 +9,81 @@
     <sound>sound\snd_switchState</sound>
     <sound>sound\snd_battle</sound>
     <sound>sound\snd_pageTurn</sound>
+    <sound>sound\snd_StoryBook</sound>
+    <sound>sound\snd_battle2</sound>
+    <sound>sound\snd_battle3</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\sp_block</sprite>
     <sprite>sprites\sp_wall</sprite>
+    <sprite>sprites\sp_slowMotion</sprite>
     <sprites name="Ball">
       <sprite>sprites\sp_normalball</sprite>
       <sprite>sprites\sp_fireball</sprite>
       <sprite>sprites\sp_iceball</sprite>
+      <sprite>sprites\sp_powerball</sprite>
     </sprites>
     <sprites name="States">
       <sprite>sprites\sp_antiMage</sprite>
       <sprite>sprites\sp_antiKnight</sprite>
       <sprite>sprites\sp_player2</sprite>
       <sprite>sprites\sp_antiArcher</sprite>
+      <sprite>sprites\sp_shootingPower</sprite>
     </sprites>
     <sprites name="Enemies">
       <sprite>sprites\sp_knight</sprite>
       <sprite>sprites\sp_mage</sprite>
       <sprite>sprites\sp_archer</sprite>
     </sprites>
-    <sprite>sprites\sprite12</sprite>
-    <sprite>sprites\sprite13</sprite>
+    <sprite>sprites\sp_heart</sprite>
+    <sprite>sprites\sp_enemyHeart</sprite>
+    <sprite>sprites\sp_state1</sprite>
+    <sprite>sprites\sp_state2</sprite>
+    <sprite>sprites\sp_state3</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\grass4</background>
     <background>background\Firstpage</background>
     <background>background\SecondPage</background>
     <background>background\ThirdPage</background>
+    <background>background\background4</background>
+    <background>background\MainScreen</background>
+    <background>background\snow</background>
+    <background>background\volcano</background>
+    <background>background\FirstAct</background>
+    <background>background\tile_ground</background>
   </backgrounds>
   <paths name="paths"/>
   <objects name="objects">
     <object>objects\obj_ball</object>
     <object>objects\obj_iceball</object>
     <object>objects\obj_fireball</object>
-    <object>objects\obj_block</object>
-    <object>objects\obj_player2</object>
+    <object>objects\obj_powerball</object>
     <object>objects\obj_player1</object>
-    <object>objects\obj_wall</object>
     <object>objects\obj_mage</object>
     <object>objects\obj_archer</object>
     <object>objects\obj_knigth</object>
+    <object>objects\obj_pblock</object>
+    <object>objects\obj_eblock</object>
+    <object>objects\obj_wall</object>
     <object>objects\obj_controller</object>
+    <object>objects\obj_player2</object>
+    <object>objects\obj_slowMIcon</object>
+    <object>objects\obj_mainControler</object>
+    <object>objects\obj_fader</object>
+    <object>objects\obj_state1</object>
+    <object>objects\obj_state2</object>
+    <object>objects\obj_state3</object>
+    <object>objects\obj_heart</object>
+    <object>objects\obj_enemiesController</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\room1</room>
-    <room>rooms\room2</room>
-    <room>rooms\room3</room>
-    <room>rooms\room0</room>
+    <room>rooms\Start</room>
+    <room>rooms\StoryPages</room>
+    <room>rooms\KnigthLevel</room>
+    <room>rooms\ArcherLevel</room>
+    <room>rooms\MageLevel</room>
+    <room>rooms\FinalLevel</room>
   </rooms>
   <constants number="2">
     <constant name="GM_build_date">42394.8725814468</constant>
