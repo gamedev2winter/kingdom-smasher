@@ -40,6 +40,7 @@
     <sprite>sprites\sp_state1</sprite>
     <sprite>sprites\sp_state2</sprite>
     <sprite>sprites\sp_state3</sprite>
+    <sprite>sprites\sp_shootIcon</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\grass4</background>
@@ -63,19 +64,22 @@
     <object>objects\obj_mage</object>
     <object>objects\obj_archer</object>
     <object>objects\obj_knigth</object>
-    <object>objects\obj_pblock</object>
-    <object>objects\obj_eblock</object>
     <object>objects\obj_wall</object>
-    <object>objects\obj_controller</object>
-    <object>objects\obj_player2</object>
-    <object>objects\obj_slowMIcon</object>
-    <object>objects\obj_mainControler</object>
+    <object>objects\obj_eblock</object>
+    <object>objects\obj_pblock</object>
     <object>objects\obj_fader</object>
-    <object>objects\obj_state1</object>
-    <object>objects\obj_state2</object>
-    <object>objects\obj_state3</object>
-    <object>objects\obj_heart</object>
+    <object>objects\obj_mainControler</object>
+    <object>objects\obj_controller</object>
     <object>objects\obj_enemiesController</object>
+    <objects name="miscellaneous">
+      <object>objects\obj_state1</object>
+      <object>objects\obj_state2</object>
+      <object>objects\obj_state3</object>
+      <object>objects\obj_heart</object>
+      <object>objects\obj_slowMIcon</object>
+      <object>objects\obj_shootIcon</object>
+      <object>objects\obj_player2</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\ArcherLevel</room>

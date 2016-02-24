@@ -159,10 +159,11 @@ if(hitCount &gt;=10){
 }
 
 
-if (power_count &gt;= 5){
-    sprite_index = sp_shootingPower;
+if (power_count &gt;= 5 &amp;&amp; player_sprite == 2){
+    with(obj_shootIcon){
+        image_index = 0;
+    }
     power_up = true;
-    power_count = 0;
 }
 
 if (slowMP_count &gt;= 5){
@@ -265,7 +266,7 @@ if(player_sprite == 1){
         <arguments>
           <argument>
             <kind>6</kind>
-            <sound>-100</sound>
+            <sound>snd_reflect</sound>
           </argument>
           <argument>
             <kind>3</kind>
@@ -618,7 +619,7 @@ with(other){
         <arguments>
           <argument>
             <kind>6</kind>
-            <sound>-100</sound>
+            <sound>snd_reflect</sound>
           </argument>
           <argument>
             <kind>3</kind>
@@ -969,7 +970,7 @@ with(other){
         <arguments>
           <argument>
             <kind>6</kind>
-            <sound>-100</sound>
+            <sound>snd_reflect</sound>
           </argument>
           <argument>
             <kind>3</kind>
@@ -1334,7 +1335,7 @@ player_sprite = 3;
         <arguments>
           <argument>
             <kind>6</kind>
-            <sound>-100</sound>
+            <sound>snd_switchState</sound>
           </argument>
           <argument>
             <kind>3</kind>
@@ -1438,7 +1439,7 @@ player_sprite = 2;
         <arguments>
           <argument>
             <kind>6</kind>
-            <sound>-100</sound>
+            <sound>snd_switchState</sound>
           </argument>
           <argument>
             <kind>3</kind>
@@ -1665,8 +1666,11 @@ player_sprite = 1;
 }
 if(power_munition &lt; 0){
     power_up = false;
+    power_count = 0;
     power_munition = 9;
-    sprite_index = sp_antiArcher;
+    with(obj_shootIcon){
+        image_index = 1;
+    }
 }
 
 if(!global.slowMotion &amp;&amp; player_sprite == 3 &amp;&amp; canSlowMotion){
