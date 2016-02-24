@@ -45,7 +45,7 @@ slowM_count = 15;
 slowMP_count = 0;
 cooldown = false;
 audio_stop_all();
-if(room_get_name(room) == "KnigthLevel" || room_get_name(room) == "ArcherLevel"){
+if(room_get_name(room) == "KnightLevel" || room_get_name(room) == "ArcherLevel"){
     audio_sound_gain(snd_battle2,0,0);
     audio_sound_gain(snd_battle2,1,4000);
     audio_play_sound(snd_battle2,5,true);
@@ -1637,6 +1637,22 @@ player_sprite = 1;
             <sprite>sp_heart</sprite>
           </argument>
         </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="57">
+      <action>
+        <libid>1</libid>
+        <id>222</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_next_room</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
       </action>
     </event>
     <event eventtype="9" enumb="32">

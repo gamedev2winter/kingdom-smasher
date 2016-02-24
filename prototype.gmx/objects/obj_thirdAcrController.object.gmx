@@ -26,12 +26,11 @@
           <argument>
             <kind>1</kind>
             <string>count = 0;
-
+audio_stop_all();
 audio_play_sound(snd_StoryBook,5,true);
-background_index[0] = Firstpage;
+background_index[0] = ThirdActMap;
 audio_sound_gain(snd_StoryBook,0,0);
 audio_sound_gain(snd_StoryBook,1,4000);
-
 </string>
           </argument>
         </arguments>
@@ -104,15 +103,12 @@ audio_sound_gain(snd_StoryBook,1,4000);
             <string>count++;
 
 if( count == 1){
-    background_index[0] = SecondPage;
+    background_index[0] = ThirdAct;
 } else if( count == 2){
-    background_index[0] = ThirdPage;
-} else if (count == 3){
-    background_index[0] = FirstAct;
-} else if (count == 4){
     audio_sound_gain(snd_StoryBook, 0, 1000);
     alarm[0] = 30;
 }
+
 </string>
           </argument>
         </arguments>
@@ -162,12 +158,8 @@ if( count == 1){
             <string>count++;
 
 if( count == 1){
-    background_index[0] = SecondPage;
+    background_index[0] = ThirdAct;
 } else if( count == 2){
-    background_index[0] = ThirdPage;
-} else if (count == 3){
-    background_index[0] = FirstAct;
-} else if (count == 4){
     audio_sound_gain(snd_StoryBook, 0, 1000);
     alarm[0] = 30;
 }

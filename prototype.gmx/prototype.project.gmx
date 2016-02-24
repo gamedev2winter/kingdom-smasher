@@ -44,15 +44,23 @@
   </sprites>
   <backgrounds name="background">
     <background>background\grass4</background>
-    <background>background\Firstpage</background>
-    <background>background\SecondPage</background>
-    <background>background\ThirdPage</background>
     <background>background\background4</background>
     <background>background\MainScreen</background>
     <background>background\snow</background>
     <background>background\volcano</background>
-    <background>background\FirstAct</background>
     <background>background\tile_ground</background>
+    <backgrounds name="pages">
+      <background>background\Firstpage</background>
+      <background>background\SecondPage</background>
+      <background>background\ThirdPage</background>
+      <background>background\FirstAct</background>
+      <background>background\SecondActMap</background>
+      <background>background\SecondAct</background>
+      <background>background\ThirdActMap</background>
+      <background>background\ThirdAct</background>
+      <background>background\FinalActMap</background>
+      <background>background\FinalAct</background>
+    </backgrounds>
   </backgrounds>
   <paths name="paths"/>
   <objects name="objects">
@@ -67,10 +75,6 @@
     <object>objects\obj_wall</object>
     <object>objects\obj_eblock</object>
     <object>objects\obj_pblock</object>
-    <object>objects\obj_fader</object>
-    <object>objects\obj_mainControler</object>
-    <object>objects\obj_controller</object>
-    <object>objects\obj_enemiesController</object>
     <objects name="miscellaneous">
       <object>objects\obj_state1</object>
       <object>objects\obj_state2</object>
@@ -80,13 +84,25 @@
       <object>objects\obj_shootIcon</object>
       <object>objects\obj_player2</object>
     </objects>
+    <objects name="Controllers">
+      <object>objects\obj_controller</object>
+      <object>objects\obj_enemiesController</object>
+      <object>objects\obj_mainControler</object>
+      <object>objects\obj_fader</object>
+      <object>objects\obj_secondActController</object>
+      <object>objects\obj_thirdAcrController</object>
+      <object>objects\obj_finalActController</object>
+    </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\ArcherLevel</room>
     <room>rooms\Start</room>
     <room>rooms\StoryPages</room>
-    <room>rooms\KnigthLevel</room>
+    <room>rooms\KnightLevel</room>
+    <room>rooms\StoryPages2</room>
+    <room>rooms\ArcherLevel</room>
+    <room>rooms\StoryPages3</room>
     <room>rooms\MageLevel</room>
+    <room>rooms\StoryPages4</room>
     <room>rooms\FinalLevel</room>
   </rooms>
   <constants number="2">
