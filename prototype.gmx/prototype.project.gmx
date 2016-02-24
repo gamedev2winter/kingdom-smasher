@@ -78,10 +78,10 @@
     <object>objects\obj_enemiesController</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\ArcherLevel</room>
     <room>rooms\Start</room>
     <room>rooms\StoryPages</room>
     <room>rooms\KnigthLevel</room>
-    <room>rooms\ArcherLevel</room>
     <room>rooms\MageLevel</room>
     <room>rooms\FinalLevel</room>
   </rooms>

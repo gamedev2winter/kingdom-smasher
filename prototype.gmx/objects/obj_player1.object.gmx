@@ -265,7 +265,7 @@ if(player_sprite == 1){
         <arguments>
           <argument>
             <kind>6</kind>
-            <sound>snd_reflect</sound>
+            <sound>-100</sound>
           </argument>
           <argument>
             <kind>3</kind>
@@ -293,7 +293,7 @@ if(player_sprite == 1){
           </argument>
           <argument>
             <kind>0</kind>
-            <string>3</string>
+            <string>2</string>
           </argument>
           <argument>
             <kind>4</kind>
@@ -618,7 +618,7 @@ with(other){
         <arguments>
           <argument>
             <kind>6</kind>
-            <sound>snd_reflect</sound>
+            <sound>-100</sound>
           </argument>
           <argument>
             <kind>3</kind>
@@ -646,7 +646,7 @@ with(other){
           </argument>
           <argument>
             <kind>0</kind>
-            <string>2</string>
+            <string>3</string>
           </argument>
           <argument>
             <kind>4</kind>
@@ -969,7 +969,7 @@ with(other){
         <arguments>
           <argument>
             <kind>6</kind>
-            <sound>snd_reflect</sound>
+            <sound>-100</sound>
           </argument>
           <argument>
             <kind>3</kind>
@@ -1312,7 +1312,7 @@ direction = point_direction(obj_player1.x+32, obj_player1.y+32, x+16, y+16);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>sprite_index = sp_antiArcher;
+            <string>sprite_index = sp_antiMage;
 player_sprite = 3;
 </string>
           </argument>
@@ -1334,7 +1334,7 @@ player_sprite = 3;
         <arguments>
           <argument>
             <kind>6</kind>
-            <sound>snd_switchState</sound>
+            <sound>-100</sound>
           </argument>
           <argument>
             <kind>3</kind>
@@ -1416,7 +1416,7 @@ player_sprite = 3;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>sprite_index = sp_antiMage;
+            <string>sprite_index = sp_antiArcher;
 player_sprite = 2;
 </string>
           </argument>
@@ -1438,7 +1438,7 @@ player_sprite = 2;
         <arguments>
           <argument>
             <kind>6</kind>
-            <sound>snd_switchState</sound>
+            <sound>-100</sound>
           </argument>
           <argument>
             <kind>3</kind>
@@ -1655,7 +1655,7 @@ player_sprite = 1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(power_up &amp;&amp; power_munition&gt;=0 &amp;&amp; player_sprite == 3){
+            <string>if(power_up &amp;&amp; power_munition&gt;=0 &amp;&amp; player_sprite == 2){
     with(instance_create(x+8,y-2,obj_powerball)){
         speed = 9;
         originalSpeed = speed;
@@ -1669,7 +1669,7 @@ if(power_munition &lt; 0){
     sprite_index = sp_antiArcher;
 }
 
-if(!global.slowMotion &amp;&amp; player_sprite == 2 &amp;&amp; canSlowMotion){
+if(!global.slowMotion &amp;&amp; player_sprite == 3 &amp;&amp; canSlowMotion){
     global.slowMotion = true;
     alarm[0] = 30;
     cooldown = true;
