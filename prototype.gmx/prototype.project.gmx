@@ -15,6 +15,7 @@
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\sp_block</sprite>
+    <sprite>sprites\sp_brokenblock</sprite>
     <sprite>sprites\sp_wall</sprite>
     <sprite>sprites\sp_shootIcon</sprite>
     <sprite>sprites\sp_slowMotion</sprite>
@@ -73,6 +74,7 @@
     <object>objects\obj_archer</object>
     <object>objects\obj_knigth</object>
     <object>objects\obj_wall</object>
+    <object>objects\obj_brokenblock</object>
     <object>objects\obj_eblock</object>
     <object>objects\obj_pblock</object>
     <objects name="miscellaneous">
