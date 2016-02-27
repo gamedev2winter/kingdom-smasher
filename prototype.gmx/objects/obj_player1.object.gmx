@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>player_sprite = 1;
+playerSpriteHit = sp_antiKnightHit;
 pSpeed = 8;
 life = 3;
 hit = false;
@@ -45,7 +46,7 @@ slowM_count = 15;
 slowMP_count = 0;
 cooldown = false;
 audio_stop_all();
-if(room_get_name(room) == "KnightLevel" || room_get_name(room) == "ArcherLevel"){
+/*if(room_get_name(room) == "KnightLevel" || room_get_name(room) == "ArcherLevel"){
     audio_sound_gain(snd_battle2,0,0);
     audio_sound_gain(snd_battle2,1,4000);
     audio_play_sound(snd_battle2,5,true);
@@ -57,7 +58,7 @@ if(room_get_name(room) == "KnightLevel" || room_get_name(room) == "ArcherLevel")
     audio_sound_gain(snd_battle,0,0);
     audio_sound_gain(snd_battle,1,4000);
     audio_play_sound(snd_battle,5,true);
-}
+}*/
 
 </string>
           </argument>
@@ -135,22 +136,29 @@ if(slowM_count == 10){
           <argument>
             <kind>1</kind>
             <string>if (keyboard_check(ord('D'))){
-    image_index = 2;
+    image_speed = 0.5;
     hspeed = pSpeed;
     direction = 0;
 }else if (keyboard_check(ord('A'))){
-    image_index = 1;
+    image_speed = 0.5;
     hspeed = pSpeed;
     direction = 180;
 }else{
     image_index = 0;
+    image_speed = 0;
     direction = 0;
     hspeed = 0;
 }
 
 if(hit){
     hitCount++;
-    image_index = 3;
+    sprite_index = playerSpriteHit;
+}else{
+    switch(player_sprite){
+        case 1: sprite_index = sp_antiKnight; break;
+        case 2: sprite_index = sp_antiArcher; break;
+        case 3: sprite_index = sp_antiMage; break;
+    }
 }
 
 if(hitCount &gt;=10){
@@ -194,6 +202,11 @@ if(player_sprite == 1){
         game_restart();
     }
 }*/
+
+with(obj_shootIcon){
+    x = obj_player1.x+33;
+    y = obj_player1.y+65;
+}
 
 
 
@@ -1314,6 +1327,7 @@ direction = point_direction(obj_player1.x+32, obj_player1.y+32, x+16, y+16);
           <argument>
             <kind>1</kind>
             <string>sprite_index = sp_antiMage;
+playerSpriteHit = sp_antiMageHit;
 player_sprite = 3;
 </string>
           </argument>
@@ -1418,6 +1432,7 @@ player_sprite = 3;
           <argument>
             <kind>1</kind>
             <string>sprite_index = sp_antiArcher;
+playerSpriteHit = sp_antiArcherHit;
 player_sprite = 2;
 </string>
           </argument>
@@ -1522,6 +1537,7 @@ player_sprite = 2;
           <argument>
             <kind>1</kind>
             <string>sprite_index = sp_antiKnight;
+playerSpriteHit = sp_antiKnightHit;
 player_sprite = 1;
 </string>
           </argument>

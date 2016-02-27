@@ -16,6 +16,7 @@
   <sprites name="sprites">
     <sprite>sprites\sp_block</sprite>
     <sprite>sprites\sp_wall</sprite>
+    <sprite>sprites\sp_shootIcon</sprite>
     <sprite>sprites\sp_slowMotion</sprite>
     <sprites name="Ball">
       <sprite>sprites\sp_normalball</sprite>
@@ -24,11 +25,12 @@
       <sprite>sprites\sp_powerball</sprite>
     </sprites>
     <sprites name="States">
-      <sprite>sprites\sp_antiMage</sprite>
       <sprite>sprites\sp_antiKnight</sprite>
-      <sprite>sprites\sp_player2</sprite>
+      <sprite>sprites\sp_antiKnightHit</sprite>
       <sprite>sprites\sp_antiArcher</sprite>
-      <sprite>sprites\sp_shootingPower</sprite>
+      <sprite>sprites\sp_antiArcherHit</sprite>
+      <sprite>sprites\sp_antiMage</sprite>
+      <sprite>sprites\sp_antiMageHit</sprite>
     </sprites>
     <sprites name="Enemies">
       <sprite>sprites\sp_knight</sprite>
@@ -36,11 +38,9 @@
       <sprite>sprites\sp_archer</sprite>
     </sprites>
     <sprite>sprites\sp_heart</sprite>
-    <sprite>sprites\sp_enemyHeart</sprite>
     <sprite>sprites\sp_state1</sprite>
     <sprite>sprites\sp_state2</sprite>
     <sprite>sprites\sp_state3</sprite>
-    <sprite>sprites\sp_shootIcon</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\grass4</background>
@@ -95,9 +95,9 @@
     </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\KnightLevel</room>
     <room>rooms\Start</room>
     <room>rooms\StoryPages</room>
-    <room>rooms\KnightLevel</room>
     <room>rooms\StoryPages2</room>
     <room>rooms\ArcherLevel</room>
     <room>rooms\StoryPages3</room>
