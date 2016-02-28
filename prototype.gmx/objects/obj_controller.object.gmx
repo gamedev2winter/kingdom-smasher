@@ -26,11 +26,12 @@
           <argument>
             <kind>1</kind>
             <string>count = 0;
-background_index[0] = Firstpage;
 
 audio_play_sound(snd_StoryBook,5,true);
+background_index[0] = Firstpage;
 audio_sound_gain(snd_StoryBook,0,0);
 audio_sound_gain(snd_StoryBook,1,4000);
+
 </string>
           </argument>
         </arguments>
@@ -39,17 +40,24 @@ audio_sound_gain(snd_StoryBook,1,4000);
     <event eventtype="2" enumb="0">
       <action>
         <libid>1</libid>
-        <id>222</id>
-        <kind>0</kind>
+        <id>603</id>
+        <kind>7</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_next_room</functionname>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>room_goto_next();
+</string>
+          </argument>
+        </arguments>
       </action>
     </event>
     <event eventtype="9" enumb="32">
@@ -105,6 +113,65 @@ if( count == 1){
     audio_sound_gain(snd_StoryBook, 0, 1000);
     alarm[0] = 30;
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="13">
+      <action>
+        <libid>1</libid>
+        <id>211</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_sound</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>6</kind>
+            <sound>snd_pageTurn</sound>
+          </argument>
+          <argument>
+            <kind>3</kind>
+            <string>0</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>count++;
+
+if( count == 1){
+    background_index[0] = SecondPage;
+} else if( count == 2){
+    background_index[0] = ThirdPage;
+} else if (count == 3){
+    background_index[0] = FirstAct;
+} else if (count == 4){
+    audio_sound_gain(snd_StoryBook, 0, 1000);
+    alarm[0] = 30;
+}
+
 </string>
           </argument>
         </arguments>
