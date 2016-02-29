@@ -29,6 +29,7 @@
 hit = false;
 hitCount = 0;
 life = 2;
+CDCount = 0;
 
 alarm[0] = irandom(40);
 </string>
@@ -53,23 +54,33 @@ alarm[0] = irandom(40);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>with(instance_create(x+32,y+65,obj_iceball)){
-    speed = 7;
-    originalSpeed = speed;
-    var randomDirection;
-    if(obj_player1.x &gt;= room_width/2){
-        randomDirection = random(room_width/2);
-        direction = point_direction(x,y,randomDirection,obj_player1.y);
-    }else{
-        randomDirection = random(room_width/2)+room_width/2;
-        direction = point_direction(x,y,randomDirection,obj_player1.y);
+            <string>CDCount++;
+if(CDCount &lt;= 2){
+    with(instance_create(x+32,y+65,obj_iceball)){
+        speed = 7;
+        originalSpeed = speed;
+        var randomDirection;
+        if(obj_player1.x &gt;= room_width/2){
+            randomDirection = random(room_width/2);
+            direction = point_direction(x,y,randomDirection,obj_player1.y);
+        }else{
+            randomDirection = random(room_width/2)+room_width/2;
+            direction = point_direction(x,y,randomDirection,obj_player1.y);
+        }
     }
+} else if(CDCount == 4){
+    CDCount = 0;
 }
+
 if(!global.slowMotion){
     time_ball = 40;
 }else{
     time_ball = 70;
 }
+
+
+
+
 
 </string>
           </argument>
