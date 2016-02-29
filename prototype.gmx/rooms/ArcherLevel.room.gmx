@@ -161,7 +161,7 @@
     <instance objName="obj_pblock" x="-15" y="880" name="inst_3C7C3B11" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_pblock" x="16" y="848" name="inst_1DE7969B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_pblock" x="-16" y="848" name="inst_FC66DAF8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_archer" x="528" y="96" name="inst_F642D088" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_archer" x="512" y="96" name="inst_F642D088" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_eblock" x="544" y="144" name="inst_3C192AFB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_eblock" x="224" y="160" name="inst_A60ACBD8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_eblock" x="352" y="160" name="inst_BE82168D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

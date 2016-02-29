@@ -29,8 +29,34 @@
 hit = false;
 hitCount = 0;
 life = 2;
+actived = true;
 
 alarm[0] = irandom(40);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>actived = true;
+life = 2;
+
 </string>
           </argument>
         </arguments>
@@ -53,16 +79,18 @@ alarm[0] = irandom(40);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>with(instance_create(x+32,y+65,obj_iceball)){
-    speed = 7;
-    originalSpeed = speed;
-    var randomDirection;
-    if(obj_player1.x &gt;= room_width/2){
-        randomDirection = random(room_width/2);
-        direction = point_direction(x,y,randomDirection,obj_player1.y);
-    }else{
-        randomDirection = random(room_width/2)+room_width/2;
-        direction = point_direction(x,y,randomDirection,obj_player1.y);
+            <string>if(actived) {
+    with(instance_create(x+32,y+65,obj_iceball)){
+        speed = 7;
+        originalSpeed = speed;
+        var randomDirection;
+        if(obj_player1.x &gt;= room_width/2){
+            randomDirection = random(room_width/2);
+            direction = point_direction(x,y,randomDirection,obj_player1.y);
+        }else{
+            randomDirection = random(room_width/2)+room_width/2;
+            direction = point_direction(x,y,randomDirection,obj_player1.y);
+        }
     }
 }
 if(!global.slowMotion){
@@ -117,16 +145,20 @@ if(!global.slowMotion){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(hit){
-    hitCount++;
+            <string>if(actived){
+    if(hit){
+        hitCount++;
+        image_index = 0;
+    }else{
+        image_index = 0;
+    }
+    
+    if(hitCount &gt;=10){
+        hitCount = 0;
+        hit = false;
+    }
+} else {
     image_index = 1;
-}else{
-    image_index = 0;
-}
-
-if(hitCount &gt;=10){
-    hitCount = 0;
-    hit = false;
 }
 </string>
           </argument>
@@ -150,14 +182,14 @@ if(hitCount &gt;=10){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(other.hit){
-    hit = true;
-    life--;
-    if(life &lt;=0){
-        obj_enemiesController.magePosX = x;
-        obj_enemiesController.magePosY = y;
-        obj_enemiesController.mageDie = 1;
-        instance_destroy();
+            <string>if(actived) {
+    if(other.hit){
+        hit = true;
+        life--;
+        if(life &lt;=0){
+            actived = false;
+            alarm[1] = 120;
+        }
     }
 }
 </string>
@@ -182,14 +214,14 @@ if(hitCount &gt;=10){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(other.hit){
-    hit = true;
-    life--;
-    if(life &lt;=0){
-        obj_enemiesController.magePosX = x;
-        obj_enemiesController.magePosY = y;
-        obj_enemiesController.mageDie = 1;
-        instance_destroy();
+            <string>if(actived) {
+    if(other.hit){
+        hit = true;
+        life--;
+        if(life &lt;=0){
+            actived = false;
+            alarm[1] = 120;
+        }
     }
 }
 </string>
@@ -214,14 +246,14 @@ if(hitCount &gt;=10){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(other.hit){
-    hit = true;
-    life--;
-    if(life &lt;=0){
-        obj_enemiesController.magePosX = x;
-        obj_enemiesController.magePosY = y;
-        obj_enemiesController.mageDie = 1;
-        instance_destroy();
+            <string>if(actived) {
+    if(other.hit){
+        hit = true;
+        life--;
+        if(life &lt;=0){
+            actived = false;
+            alarm[1] = 120;
+        }
     }
 }
 </string>
