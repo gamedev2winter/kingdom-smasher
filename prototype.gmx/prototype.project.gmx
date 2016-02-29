@@ -9,54 +9,103 @@
     <sound>sound\snd_switchState</sound>
     <sound>sound\snd_battle</sound>
     <sound>sound\snd_pageTurn</sound>
+    <sound>sound\snd_StoryBook</sound>
+    <sound>sound\snd_battle2</sound>
+    <sound>sound\snd_battle3</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\sp_block</sprite>
+    <sprite>sprites\sp_brokenblock</sprite>
     <sprite>sprites\sp_wall</sprite>
+    <sprite>sprites\sp_shootIcon</sprite>
+    <sprite>sprites\sp_slowMotion</sprite>
     <sprites name="Ball">
       <sprite>sprites\sp_normalball</sprite>
       <sprite>sprites\sp_fireball</sprite>
       <sprite>sprites\sp_iceball</sprite>
+      <sprite>sprites\sp_powerball</sprite>
     </sprites>
     <sprites name="States">
-      <sprite>sprites\sp_antiMage</sprite>
       <sprite>sprites\sp_antiKnight</sprite>
-      <sprite>sprites\sp_player2</sprite>
+      <sprite>sprites\sp_antiKnightHit</sprite>
       <sprite>sprites\sp_antiArcher</sprite>
+      <sprite>sprites\sp_antiArcherHit</sprite>
+      <sprite>sprites\sp_antiMage</sprite>
+      <sprite>sprites\sp_antiMageHit</sprite>
     </sprites>
     <sprites name="Enemies">
       <sprite>sprites\sp_knight</sprite>
       <sprite>sprites\sp_mage</sprite>
       <sprite>sprites\sp_archer</sprite>
     </sprites>
-    <sprite>sprites\sprite12</sprite>
-    <sprite>sprites\sprite13</sprite>
+    <sprite>sprites\sp_heart</sprite>
+    <sprite>sprites\sp_state1</sprite>
+    <sprite>sprites\sp_state2</sprite>
+    <sprite>sprites\sp_state3</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\grass4</background>
-    <background>background\Firstpage</background>
-    <background>background\SecondPage</background>
-    <background>background\ThirdPage</background>
+    <background>background\background4</background>
+    <background>background\MainScreen</background>
+    <background>background\snow</background>
+    <background>background\volcano</background>
+    <background>background\tile_ground</background>
+    <backgrounds name="pages">
+      <background>background\Firstpage</background>
+      <background>background\SecondPage</background>
+      <background>background\ThirdPage</background>
+      <background>background\FirstAct</background>
+      <background>background\SecondActMap</background>
+      <background>background\SecondAct</background>
+      <background>background\ThirdActMap</background>
+      <background>background\ThirdAct</background>
+      <background>background\FinalActMap</background>
+      <background>background\FinalAct</background>
+    </backgrounds>
   </backgrounds>
   <paths name="paths"/>
   <objects name="objects">
     <object>objects\obj_ball</object>
     <object>objects\obj_iceball</object>
     <object>objects\obj_fireball</object>
-    <object>objects\obj_block</object>
-    <object>objects\obj_player2</object>
+    <object>objects\obj_powerball</object>
     <object>objects\obj_player1</object>
-    <object>objects\obj_wall</object>
     <object>objects\obj_mage</object>
     <object>objects\obj_archer</object>
     <object>objects\obj_knigth</object>
-    <object>objects\obj_controller</object>
+    <object>objects\obj_wall</object>
+    <object>objects\obj_brokenblock</object>
+    <object>objects\obj_eblock</object>
+    <object>objects\obj_pblock</object>
+    <objects name="miscellaneous">
+      <object>objects\obj_state1</object>
+      <object>objects\obj_state2</object>
+      <object>objects\obj_state3</object>
+      <object>objects\obj_heart</object>
+      <object>objects\obj_slowMIcon</object>
+      <object>objects\obj_shootIcon</object>
+      <object>objects\obj_player2</object>
+    </objects>
+    <objects name="Controllers">
+      <object>objects\obj_controller</object>
+      <object>objects\obj_enemiesController</object>
+      <object>objects\obj_mainControler</object>
+      <object>objects\obj_fader</object>
+      <object>objects\obj_secondActController</object>
+      <object>objects\obj_thirdAcrController</object>
+      <object>objects\obj_finalActController</object>
+    </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\room1</room>
-    <room>rooms\room2</room>
-    <room>rooms\room3</room>
-    <room>rooms\room0</room>
+    <room>rooms\Start</room>
+    <room>rooms\StoryPages</room>
+    <room>rooms\KnightLevel</room>
+    <room>rooms\StoryPages2</room>
+    <room>rooms\ArcherLevel</room>
+    <room>rooms\StoryPages3</room>
+    <room>rooms\MageLevel</room>
+    <room>rooms\StoryPages4</room>
+    <room>rooms\FinalLevel</room>
   </rooms>
   <constants number="2">
     <constant name="GM_build_date">42394.8725814468</constant>
