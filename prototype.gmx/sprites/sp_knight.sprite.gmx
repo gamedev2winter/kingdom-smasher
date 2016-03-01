@@ -22,5 +22,6 @@
   <frames>
     <frame index="0">images\sp_knight_0.png</frame>
     <frame index="1">images\sp_knight_1.png</frame>
+    <frame index="2">images\sp_knight_2.png</frame>
   </frames>
 </sprite>
