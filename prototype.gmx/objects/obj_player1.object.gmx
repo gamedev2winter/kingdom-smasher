@@ -36,7 +36,7 @@ image_speed = 0;
 
 //Shooting Power
 power_count = 0;
-power_munition = 9;
+power_munition = 2;
 power_up = false;
 
 //slow Motion Power
@@ -1699,7 +1699,7 @@ player_sprite = 1;
 if(power_munition &lt; 0){
     power_up = false;
     power_count = 0;
-    power_munition = 9;
+    power_munition = 3;
     with(obj_shootIcon){
         image_index = 1;
     }
