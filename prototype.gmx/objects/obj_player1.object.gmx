@@ -27,10 +27,13 @@
             <kind>1</kind>
             <string>player_sprite = 1;
 playerSpriteHit = sp_antiKnightHit;
+playerSpriteReflect = sp_antiKnightReflect;
 pSpeed = 8;
 life = 3;
 hit = false;
 hitCount = 0;
+reflect = false;
+startAnimation = true;
 
 image_speed = 0;
 
@@ -144,8 +147,10 @@ if(slowM_count == 10){
     hspeed = pSpeed;
     direction = 180;
 }else{
-    image_index = 0;
-    image_speed = 0;
+    if(!reflect){
+        image_speed = 0;
+        image_index = 0;
+    }
     direction = 0;
     hspeed = 0;
 }
@@ -153,6 +158,18 @@ if(slowM_count == 10){
 if(hit){
     hitCount++;
     sprite_index = playerSpriteHit;
+}else if(reflect){
+    sprite_index = playerSpriteReflect;
+    image_speed = 1;
+    if(startAnimation){
+        image_index = 0;
+        startAnimation = false;
+    }else{
+        if(image_index == 5){
+            reflect = false;
+            startAnimation = true;
+        }
+    }
 }else{
     switch(player_sprite){
         case 1: sprite_index = sp_antiKnight; break;
@@ -160,6 +177,7 @@ if(hit){
         case 3: sprite_index = sp_antiMage; break;
     }
 }
+
 
 if(hitCount &gt;=10){
     hitCount = 0;
@@ -259,31 +277,8 @@ with(obj_shootIcon){
           <argument>
             <kind>1</kind>
             <string>hit = true;
+audio_play_sound(snd_reflect, 5, false);
 </string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>211</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_sound</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>6</kind>
-            <sound>snd_reflect</sound>
-          </argument>
-          <argument>
-            <kind>3</kind>
-            <string>0</string>
           </argument>
         </arguments>
       </action>
@@ -345,7 +340,9 @@ with(obj_shootIcon){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(!power_up){
+            <string>reflect = true;
+
+if(!power_up){
     power_count++;
 }
 
@@ -612,31 +609,8 @@ with(other){
           <argument>
             <kind>1</kind>
             <string>hit = true;
+audio_play_sound(snd_reflect, 5, false);
 </string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>211</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_sound</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>6</kind>
-            <sound>snd_reflect</sound>
-          </argument>
-          <argument>
-            <kind>3</kind>
-            <string>0</string>
           </argument>
         </arguments>
       </action>
@@ -698,7 +672,9 @@ with(other){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(!canSlowMotion &amp;&amp; !cooldown){
+            <string>reflect = true;
+
+if(!canSlowMotion &amp;&amp; !cooldown){
     slowMP_count++;
 }
 with(other){
@@ -963,31 +939,8 @@ with(other){
           <argument>
             <kind>1</kind>
             <string>hit = true;
+audio_play_sound(snd_reflect, 5, false);
 </string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>211</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_sound</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>6</kind>
-            <sound>snd_reflect</sound>
-          </argument>
-          <argument>
-            <kind>3</kind>
-            <string>0</string>
           </argument>
         </arguments>
       </action>
@@ -1043,15 +996,44 @@ with(other){
         <exetype>2</exetype>
         <functionname></functionname>
         <codestring></codestring>
-        <whoName>other</whoName>
+        <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>originalSpeed += 5;
-direction = point_direction(obj_player1.x+32, obj_player1.y+32, x+16, y+16);
+            <string>reflect = true;
+
+with(other){
+    direction = point_direction(obj_player1.x+32, obj_player1.y+32, x+16, y+16);
+}
+
+
 </string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>101</id>
+        <kind>0</kind>
+        <userelative>-1</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_move</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>000010000</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>0</string>
           </argument>
         </arguments>
       </action>
@@ -1328,32 +1310,10 @@ direction = point_direction(obj_player1.x+32, obj_player1.y+32, x+16, y+16);
             <kind>1</kind>
             <string>sprite_index = sp_antiMage;
 playerSpriteHit = sp_antiMageHit;
+playerSpriteReflect = sp_antiMageReflect;
 player_sprite = 3;
+audio_play_sound(snd_switchState, 5, false);
 </string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>211</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_sound</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>6</kind>
-            <sound>snd_switchState</sound>
-          </argument>
-          <argument>
-            <kind>3</kind>
-            <string>0</string>
           </argument>
         </arguments>
       </action>
@@ -1433,32 +1393,10 @@ player_sprite = 3;
             <kind>1</kind>
             <string>sprite_index = sp_antiArcher;
 playerSpriteHit = sp_antiArcherHit;
+playerSpriteReflect = sp_antiArcherReflect;
 player_sprite = 2;
+audio_play_sound(snd_switchState, 5, false);
 </string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>211</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_sound</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>6</kind>
-            <sound>snd_switchState</sound>
-          </argument>
-          <argument>
-            <kind>3</kind>
-            <string>0</string>
           </argument>
         </arguments>
       </action>
@@ -1538,32 +1476,10 @@ player_sprite = 2;
             <kind>1</kind>
             <string>sprite_index = sp_antiKnight;
 playerSpriteHit = sp_antiKnightHit;
+playerSpriteReflect = sp_antiKnightReflect;
 player_sprite = 1;
+audio_play_sound(snd_switchState, 5, false);
 </string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>211</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_sound</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>6</kind>
-            <sound>snd_switchState</sound>
-          </argument>
-          <argument>
-            <kind>3</kind>
-            <string>0</string>
           </argument>
         </arguments>
       </action>

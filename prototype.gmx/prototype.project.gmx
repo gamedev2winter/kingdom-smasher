@@ -27,10 +27,13 @@
     </sprites>
     <sprites name="States">
       <sprite>sprites\sp_antiKnight</sprite>
+      <sprite>sprites\sp_antiKnightReflect</sprite>
       <sprite>sprites\sp_antiKnightHit</sprite>
       <sprite>sprites\sp_antiArcher</sprite>
+      <sprite>sprites\sp_antiArcherReflect</sprite>
       <sprite>sprites\sp_antiArcherHit</sprite>
       <sprite>sprites\sp_antiMage</sprite>
+      <sprite>sprites\sp_antiMageReflect</sprite>
       <sprite>sprites\sp_antiMageHit</sprite>
     </sprites>
     <sprites name="Enemies">
