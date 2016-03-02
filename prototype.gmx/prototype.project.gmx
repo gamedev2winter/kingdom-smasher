@@ -35,6 +35,7 @@
       <sprite>sprites\sp_antiMage</sprite>
       <sprite>sprites\sp_antiMageReflect</sprite>
       <sprite>sprites\sp_antiMageHit</sprite>
+      <sprite>sprites\sp_death</sprite>
     </sprites>
     <sprites name="Enemies">
       <sprite>sprites\sp_knight</sprite>

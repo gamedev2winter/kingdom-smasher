@@ -34,6 +34,7 @@ hit = false;
 hitCount = 0;
 reflect = false;
 startAnimation = true;
+dead = false;
 
 image_speed = 0;
 
@@ -138,43 +139,57 @@ if(slowM_count == 10){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (keyboard_check(ord('D'))){
-    image_speed = 0.5;
-    hspeed = pSpeed;
-    direction = 0;
-}else if (keyboard_check(ord('A'))){
-    image_speed = 0.5;
-    hspeed = pSpeed;
-    direction = 180;
-}else{
-    if(!reflect){
-        image_speed = 0;
-        image_index = 0;
-    }
-    direction = 0;
-    hspeed = 0;
-}
-
-if(hit){
-    hitCount++;
-    sprite_index = playerSpriteHit;
-}else if(reflect){
-    sprite_index = playerSpriteReflect;
-    image_speed = 1;
-    if(startAnimation){
-        image_index = 0;
-        startAnimation = false;
+            <string>if(!dead){
+    if (keyboard_check(ord('D'))){
+        image_speed = 0.5;
+        hspeed = pSpeed;
+        direction = 0;
+    }else if (keyboard_check(ord('A'))){
+        image_speed = 0.5;
+        hspeed = pSpeed;
+        direction = 180;
     }else{
-        if(image_index == 5){
-            reflect = false;
-            startAnimation = true;
+        if(!reflect){
+            image_speed = 0;
+            image_index = 0;
+        }
+        direction = 0;
+        hspeed = 0;
+    }
+    
+    if(hit){
+        hitCount++;
+        sprite_index = playerSpriteHit;
+    }else if(reflect){
+        sprite_index = playerSpriteReflect;
+        image_speed = 1;
+        if(startAnimation){
+            image_index = 0;
+            startAnimation = false;
+        }else{
+            if(image_index == 5){
+                reflect = false;
+                startAnimation = true;
+            }
+        }
+    }else{
+        switch(player_sprite){
+            case 1: sprite_index = sp_antiKnight; break;
+            case 2: sprite_index = sp_antiArcher; break;
+            case 3: sprite_index = sp_antiMage; break;
         }
     }
 }else{
-    switch(player_sprite){
-        case 1: sprite_index = sp_antiKnight; break;
-        case 2: sprite_index = sp_antiArcher; break;
-        case 3: sprite_index = sp_antiMage; break;
+    image_speed = 0.5;
+    sprite_index = sp_death;
+    if(startAnimation){
+        image_index = 0;
+        startAnimation = false;
+    }
+    if(image_index == 5){
+        image_index = 6;
+        show_message("Defeated");
+        room_restart();
     }
 }
 
@@ -212,20 +227,14 @@ if(player_sprite == 1){
     pSpeed = 8;
 }
 
-/*if(!instance_exists(obj_knigth) &amp;&amp; !instance_exists(obj_mage)&amp;&amp; !instance_exists(obj_archer)){
+if(!instance_exists(obj_knigth) &amp;&amp; !instance_exists(obj_mage)&amp;&amp; !instance_exists(obj_archer)){
     show_message("Level Complete!");
     if (room_next(room) != -1){
         room_goto(room_next(room));
     } else{
         game_restart();
     }
-}*/
-
-with(obj_shootIcon){
-    x = obj_player1.x+33;
-    y = obj_player1.y+65;
 }
-
 
 
 </string>
@@ -260,28 +269,6 @@ with(obj_shootIcon){
       </action>
     </event>
     <event eventtype="4" ename="obj_fireball">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>other</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>hit = true;
-audio_play_sound(snd_reflect, 5, false);
-</string>
-          </argument>
-        </arguments>
-      </action>
       <action>
         <libid>1</libid>
         <id>612</id>
@@ -341,6 +328,7 @@ audio_play_sound(snd_reflect, 5, false);
           <argument>
             <kind>1</kind>
             <string>reflect = true;
+audio_play_sound(snd_reflect, 5, false);
 
 if(!power_up){
     power_count++;
@@ -348,6 +336,7 @@ if(!power_up){
 
 with(other){
     direction = point_direction(obj_player1.x+32, obj_player1.y+32, x+16, y+16);
+    hit = true;
 }
 
 
@@ -516,51 +505,24 @@ with(other){
       </action>
       <action>
         <libid>1</libid>
-        <id>203</id>
-        <kind>0</kind>
+        <id>603</id>
+        <kind>7</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
         <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_kill_object</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>321</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_message</functionname>
+        <exetype>2</exetype>
+        <functionname></functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
-            <kind>2</kind>
-            <string>YOU LOSE :(</string>
+            <kind>1</kind>
+            <string>dead = true;
+</string>
           </argument>
         </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>223</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_current_room</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
       </action>
       <action>
         <libid>1</libid>
@@ -592,28 +554,6 @@ with(other){
       </action>
     </event>
     <event eventtype="4" ename="obj_iceball">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>other</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>hit = true;
-audio_play_sound(snd_reflect, 5, false);
-</string>
-          </argument>
-        </arguments>
-      </action>
       <action>
         <libid>1</libid>
         <id>612</id>
@@ -673,12 +613,14 @@ audio_play_sound(snd_reflect, 5, false);
           <argument>
             <kind>1</kind>
             <string>reflect = true;
+audio_play_sound(snd_reflect, 5, false);
 
 if(!canSlowMotion &amp;&amp; !cooldown){
     slowMP_count++;
 }
 with(other){
     direction = point_direction(obj_player1.x+32, obj_player1.y+32, x+16, y+16);
+    hit = true
 }
 
 </string>
@@ -846,51 +788,24 @@ with(other){
       </action>
       <action>
         <libid>1</libid>
-        <id>203</id>
-        <kind>0</kind>
+        <id>603</id>
+        <kind>7</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
         <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_kill_object</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>321</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_message</functionname>
+        <exetype>2</exetype>
+        <functionname></functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
-            <kind>2</kind>
-            <string>YOU LOSE :(</string>
+            <kind>1</kind>
+            <string>dead = true;
+</string>
           </argument>
         </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>223</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_current_room</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
       </action>
       <action>
         <libid>1</libid>
@@ -922,28 +837,6 @@ with(other){
       </action>
     </event>
     <event eventtype="4" ename="obj_ball">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>other</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>hit = true;
-audio_play_sound(snd_reflect, 5, false);
-</string>
-          </argument>
-        </arguments>
-      </action>
       <action>
         <libid>1</libid>
         <id>612</id>
@@ -1003,11 +896,13 @@ audio_play_sound(snd_reflect, 5, false);
           <argument>
             <kind>1</kind>
             <string>reflect = true;
+audio_play_sound(snd_reflect, 5, false);
 
 with(other){
     direction = point_direction(obj_player1.x+32, obj_player1.y+32, x+16, y+16);
     speed += 5;
     originalSpeed +=5;
+    hit = true;
 }
 
 
@@ -1176,51 +1071,24 @@ with(other){
       </action>
       <action>
         <libid>1</libid>
-        <id>203</id>
-        <kind>0</kind>
+        <id>603</id>
+        <kind>7</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
         <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_kill_object</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>321</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_message</functionname>
+        <exetype>2</exetype>
+        <functionname></functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
-            <kind>2</kind>
-            <string>YOU LOSE :(</string>
+            <kind>1</kind>
+            <string>dead = true;
+</string>
           </argument>
         </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>223</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_current_room</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
       </action>
       <action>
         <libid>1</libid>
