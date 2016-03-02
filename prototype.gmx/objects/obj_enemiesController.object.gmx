@@ -34,7 +34,6 @@ knigthPosY = 0;
 knigthDie = 0;
 archerDie = 0;
 mageDie = 0;
-
 </string>
           </argument>
         </arguments>
@@ -57,7 +56,7 @@ mageDie = 0;
         <arguments>
           <argument>
             <kind>10</kind>
-            <object>obj_knigth</object>
+            <object>obj_knight</object>
           </argument>
           <argument>
             <kind>0</kind>
@@ -161,6 +160,8 @@ if(mageDie = 1) {
     alarm[1] = 60;
     mageDie = 0;
 }
+
+
 </string>
           </argument>
         </arguments>

@@ -288,8 +288,8 @@
     <instance objName="obj_eblock" x="992" y="320" name="inst_476CF583" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_eblock" x="1056" y="320" name="inst_0A4BA9E1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_eblock" x="1120" y="320" name="inst_E73217C8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_knigth" x="32" y="192" name="inst_A2B7AAC7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_knigth" x="1056" y="208" name="inst_64B0035F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_knight" x="32" y="192" name="inst_A2B7AAC7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_knight" x="1056" y="208" name="inst_64B0035F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_slowMIcon" x="32" y="576" name="inst_69A44ECD" locked="0" code="" scaleX="0.666666686534882" scaleY="0.666666686534882" colour="4294967295" rotation="0"/>
     <instance objName="obj_state1" x="864" y="0" name="inst_5D2A2542" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_state2" x="960" y="0" name="inst_12C8CAC9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

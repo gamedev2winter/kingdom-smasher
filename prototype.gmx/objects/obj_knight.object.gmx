@@ -32,6 +32,8 @@ life = 3;
 time_ball = irandom(70);
 actived = true;
 
+shootsCount = 3;
+
 alarm[0] = time_ball;
 </string>
           </argument>
@@ -82,23 +84,44 @@ sprite_index = sp_knight;
           <argument>
             <kind>1</kind>
             <string>if(actived){
+var dir;
+    switch (shootsCount){
+        case 3: dir = 240; break;
+        case 2: dir = 270; break;
+        case 1: dir = 300; break;
+        }
+    
     with(instance_create(x+32,y+65,obj_ball)){
         speed = 5;
         originalSpeed = speed;
-        var randomDirection;
+        direction = dir;
+        
+        /*var randomDirection;
         if(obj_player1.x &gt;= room_width/2){
             randomDirection = random(room_width/2);
             direction = point_direction(x,y,randomDirection,obj_player1.y);
         }else{
             randomDirection = random(room_width/2)+room_width/2;
             direction = point_direction(x,y,randomDirection,obj_player1.y);
-        }
+        }*/
     }
 }
+    shootsCount--;
+
 if(global.slowMotion){
-    time_ball = 60;
+    if(shootsCount == 0){
+        time_ball = 200;
+        shootsCount = 3;
+    } else {
+        time_ball = 100;
+    }
 }else{
-    time_ball = 100;
+     if(shootsCount == 0){
+        time_ball = 180;
+        shootsCount = 3;
+    } else {
+        time_ball = 60;
+    }
 }
 
 </string>

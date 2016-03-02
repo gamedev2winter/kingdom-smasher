@@ -72,7 +72,7 @@ if(y &gt; 896) {
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_knigth">
+    <event eventtype="4" ename="obj_knight">
       <action>
         <libid>1</libid>
         <id>603</id>
