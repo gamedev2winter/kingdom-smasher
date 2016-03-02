@@ -38,9 +38,11 @@
     </sprites>
     <sprites name="Enemies">
       <sprite>sprites\sp_knight</sprite>
+      <sprite>sprites\sp_knightDisabled</sprite>
       <sprite>sprites\sp_mage</sprite>
+      <sprite>sprites\sp_mageDisabled</sprite>
       <sprite>sprites\sp_archer</sprite>
-      <sprite>sprites\sp_archerDisable</sprite>
+      <sprite>sprites\sp_archerDisabled</sprite>
     </sprites>
     <sprite>sprites\sp_heart</sprite>
     <sprite>sprites\sp_state1</sprite>

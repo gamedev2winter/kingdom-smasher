@@ -227,8 +227,8 @@ if(!global.slowMotion){
         if(life == 0){
             actived = false;
             alarm[1] = 120;
-            sprite_index = sp_archerDisable;
             speed = 0;
+            sprite_index = sp_archerDisabled;
         }
     }
 }
@@ -261,8 +261,8 @@ if(!global.slowMotion){
         if(life == 0){
             actived = false;
             alarm[1] = 120;
-            sprite_index = sp_archerDisable;
             speed = 0;
+            sprite_index = sp_archerDisabled;
         }
     }
 }
@@ -295,8 +295,8 @@ if(!global.slowMotion){
         if(life == 0){
             actived = false;
             alarm[1] = 120;
-            sprite_index = sp_archerDisable;
             speed = 0;
+            sprite_index = sp_archerDisabled;
         }
     }
 }

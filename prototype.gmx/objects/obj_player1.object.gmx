@@ -1006,6 +1006,8 @@ audio_play_sound(snd_reflect, 5, false);
 
 with(other){
     direction = point_direction(obj_player1.x+32, obj_player1.y+32, x+16, y+16);
+    speed += 5;
+    originalSpeed +=5;
 }
 
 
