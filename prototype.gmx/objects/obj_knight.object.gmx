@@ -33,8 +33,9 @@ time_ball = irandom(70);
 actived = true;
 
 shootsCount = 3;
+done = true;
 
-alarm[0] = time_ball;
+//alarm[0] = time_ball;
 </string>
           </argument>
         </arguments>
@@ -128,30 +129,6 @@ if(global.slowMotion){
           </argument>
         </arguments>
       </action>
-      <action>
-        <libid>1</libid>
-        <id>301</id>
-        <kind>0</kind>
-        <userelative>-1</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_set_alarm</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>0</kind>
-            <string>time_ball</string>
-          </argument>
-          <argument>
-            <kind>4</kind>
-            <string>0</string>
-          </argument>
-        </arguments>
-      </action>
     </event>
     <event eventtype="3" enumb="0">
       <action>
@@ -238,17 +215,39 @@ if(global.slowMotion){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(actived) {
-    if(other.hit){
-        life--;
-        hit = true;
-        if(life &lt;= 0){
-           actived = false;
-           alarm[1] = 120;
-           sprite_index = sp_knightDisabled;
+            <string>if(actived){
+var dir;
+    switch (shootsCount){
+        case 3: dir = 240; break;
+        case 2: dir = 270; break;
+        case 1: dir = 300; break;
+        }
+    
+    with(instance_create(x+32,y+65,obj_ball)){
+        speed = 5;
+        originalSpeed = speed;
+        direction = dir;
+       
+    }
+    shootsCount--;
+    
+    if(shootsCount == 0){
+        shootsCount = 3;
+        done = true;
+    }
+    
+    if(!Done){
+        if(global.slowMotion){
+            time_ball = 100;
+        }else{
+            time_ball = 60;
         }
     }
+        
 }
+
+
+
 </string>
           </argument>
         </arguments>

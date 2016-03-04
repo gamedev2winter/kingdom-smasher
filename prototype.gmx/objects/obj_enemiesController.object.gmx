@@ -34,6 +34,17 @@ knigthPosY = 0;
 knigthDie = 0;
 archerDie = 0;
 mageDie = 0;
+
+count = 0;
+
+var i;
+enemy[] = 0;
+
+for (i = 0; i &lt; instance_number(obj_knight); i += 1){
+   enemy[i] = instance_find(obj_knight,i);
+}
+
+alarm[1] = 1;
 </string>
           </argument>
         </arguments>
@@ -42,29 +53,31 @@ mageDie = 0;
     <event eventtype="2" enumb="3">
       <action>
         <libid>1</libid>
-        <id>201</id>
-        <kind>0</kind>
-        <userelative>-1</userelative>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
         <isquestion>0</isquestion>
         <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_create_object</functionname>
+        <exetype>2</exetype>
+        <functionname></functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
-            <kind>10</kind>
-            <object>obj_knight</object>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>knigthPosX</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>knigthPosY</string>
+            <kind>1</kind>
+            <string>enemy[1].alarm[0] = 1;
+
+if(count &gt;= 6 &amp;&amp; count &lt; 8){
+    alarm[3] = 60;
+}else{
+    alarm[1] = 1;
+    count = -1;
+}
+
+count++;
+</string>
           </argument>
         </arguments>
       </action>
@@ -72,29 +85,30 @@ mageDie = 0;
     <event eventtype="2" enumb="2">
       <action>
         <libid>1</libid>
-        <id>201</id>
-        <kind>0</kind>
-        <userelative>-1</userelative>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
         <isquestion>0</isquestion>
         <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_create_object</functionname>
+        <exetype>2</exetype>
+        <functionname></functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
-            <kind>10</kind>
-            <object>obj_archer</object>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>archerPosX</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>archerPosY</string>
+            <kind>1</kind>
+            <string>enemy[2].alarm[0] = 1;
+
+if(count &gt;= 3 &amp;&amp; count &lt; 5){
+    alarm[2] = 60;
+}else{
+    alarm[3] = 1;
+}
+
+count++;
+</string>
           </argument>
         </arguments>
       </action>
@@ -102,29 +116,30 @@ mageDie = 0;
     <event eventtype="2" enumb="1">
       <action>
         <libid>1</libid>
-        <id>201</id>
-        <kind>0</kind>
-        <userelative>-1</userelative>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
         <isquestion>0</isquestion>
         <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_create_object</functionname>
+        <exetype>2</exetype>
+        <functionname></functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
-            <kind>10</kind>
-            <object>obj_mage</object>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>magePosX</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>magePosY</string>
+            <kind>1</kind>
+            <string>enemy[0].alarm[0] = 1;
+
+if(count &lt; 2){
+    alarm[1] = 60;
+}else{
+    alarm[2] = 1;
+}
+
+count++;
+</string>
           </argument>
         </arguments>
       </action>
@@ -146,7 +161,7 @@ mageDie = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(knigthDie = 1) {
+            <string>/*if(knigthDie = 1) {
     alarm[3] = 60;
     knigthDie = 0;
 }
@@ -159,9 +174,7 @@ if(archerDie = 1) {
 if(mageDie = 1) {
     alarm[1] = 60;
     mageDie = 0;
-}
-
-
+}*/
 </string>
           </argument>
         </arguments>
