@@ -71,6 +71,9 @@
     </backgrounds>
   </backgrounds>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <script>scripts\KnightScr.gml</script>
+  </scripts>
   <objects name="objects">
     <object>objects\obj_ball</object>
     <object>objects\obj_iceball</object>
@@ -104,9 +107,9 @@
     </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\KnightLevel</room>
     <room>rooms\Start</room>
     <room>rooms\StoryPages</room>
+    <room>rooms\KnightLevel</room>
     <room>rooms\StoryPages2</room>
     <room>rooms\ArcherLevel</room>
     <room>rooms\StoryPages3</room>

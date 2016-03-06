@@ -50,7 +50,7 @@ slowM_count = 15;
 slowMP_count = 0;
 cooldown = false;
 audio_stop_all();
-if(room_get_name(room) == "KnightLevel" || room_get_name(room) == "ArcherLevel"){
+/*if(room_get_name(room) == "KnightLevel" || room_get_name(room) == "ArcherLevel"){
     audio_sound_gain(snd_battle2,0,0);
     audio_sound_gain(snd_battle2,1,4000);
     audio_play_sound(snd_battle2,5,true);
@@ -62,7 +62,7 @@ if(room_get_name(room) == "KnightLevel" || room_get_name(room) == "ArcherLevel")
     audio_sound_gain(snd_battle,0,0);
     audio_sound_gain(snd_battle,1,4000);
     audio_play_sound(snd_battle,5,true);
-}
+}*/
 
 </string>
           </argument>

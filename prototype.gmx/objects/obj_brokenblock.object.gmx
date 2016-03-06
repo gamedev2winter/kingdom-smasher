@@ -32,6 +32,9 @@
                 instance_destroy();
             }
         }
+        with(other){
+            instance_destroy();
+        }
         instance_destroy();
         effect_create_above(ef_explosion, x, y, 2, c_gray);
     }
@@ -40,6 +43,9 @@
         if (point_distance(x,y,obj_brokenblock.x,obj_brokenblock.y) &lt; 75) {
             instance_destroy();
         }
+    }
+    with(other){
+        instance_destroy();
     }
     instance_destroy();
     effect_create_above(ef_explosion, x, y, 2, c_gray);
@@ -73,6 +79,9 @@
                 instance_destroy();
             }
         }
+        with(other){
+            instance_destroy();
+        }
         instance_destroy();
         effect_create_above(ef_explosion, x, y, 2, c_gray);
     }
@@ -81,6 +90,9 @@
         if (point_distance(x,y,obj_brokenblock.x,obj_brokenblock.y) &lt; 75) {
             instance_destroy();
         }
+    }
+    with(other){
+        instance_destroy();
     }
     instance_destroy();
     effect_create_above(ef_explosion, x, y, 2, c_gray);
@@ -114,14 +126,21 @@
                 instance_destroy();
             }
         }
+        with(other){
+            instance_destroy();
+        }
         instance_destroy();
         effect_create_above(ef_explosion, x, y, 2, c_gray);
+        
     }
 } else if(y &gt; 500){//player block
     with (obj_pblock) {
         if (point_distance(x,y,obj_brokenblock.x,obj_brokenblock.y) &lt; 75) {
             instance_destroy();
         }
+    }
+    with(other){
+        instance_destroy();
     }
     instance_destroy();
     effect_create_above(ef_explosion, x, y, 2, c_gray);

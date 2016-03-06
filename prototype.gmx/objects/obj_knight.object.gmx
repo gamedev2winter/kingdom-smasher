@@ -29,13 +29,11 @@
 hit = false;
 hitCount = 0;
 life = 3;
-time_ball = irandom(70);
 actived = true;
-
+LIVE = false;
+first = true;
 shootsCount = 3;
 done = true;
-
-//alarm[0] = time_ball;
 </string>
           </argument>
         </arguments>
@@ -84,8 +82,8 @@ sprite_index = sp_knight;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(actived){
-var dir;
+            <string>if(actived &amp;&amp; LIVE){
+    var dir;
     switch (shootsCount){
         case 3: dir = 240; break;
         case 2: dir = 270; break;
@@ -96,34 +94,23 @@ var dir;
         speed = 5;
         originalSpeed = speed;
         direction = dir;
-        
-        /*var randomDirection;
-        if(obj_player1.x &gt;= room_width/2){
-            randomDirection = random(room_width/2);
-            direction = point_direction(x,y,randomDirection,obj_player1.y);
-        }else{
-            randomDirection = random(room_width/2)+room_width/2;
-            direction = point_direction(x,y,randomDirection,obj_player1.y);
-        }*/
     }
-}
     shootsCount--;
-
-if(global.slowMotion){
+    
     if(shootsCount == 0){
-        time_ball = 200;
         shootsCount = 3;
-    } else {
-        time_ball = 100;
     }
-}else{
-     if(shootsCount == 0){
-        time_ball = 180;
-        shootsCount = 3;
-    } else {
+
+    if(global.slowMotion){
+        time_ball = 100;
+    }else{
         time_ball = 60;
     }
+    alarm[0] = time_ball;
 }
+
+
+
 
 </string>
           </argument>
@@ -158,6 +145,13 @@ if(global.slowMotion){
     if(hitCount == 10){
         hit = false;
         hitCount = 0;
+    }
+}
+
+if (LIVE){
+    if(first){
+    alarm[0] = 1;
+    first = false;
     }
 }
 </string>
@@ -215,39 +209,17 @@ if(global.slowMotion){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(actived){
-var dir;
-    switch (shootsCount){
-        case 3: dir = 240; break;
-        case 2: dir = 270; break;
-        case 1: dir = 300; break;
-        }
-    
-    with(instance_create(x+32,y+65,obj_ball)){
-        speed = 5;
-        originalSpeed = speed;
-        direction = dir;
-       
-    }
-    shootsCount--;
-    
-    if(shootsCount == 0){
-        shootsCount = 3;
-        done = true;
-    }
-    
-    if(!Done){
-        if(global.slowMotion){
-            time_ball = 100;
-        }else{
-            time_ball = 60;
+            <string>if(actived) {
+    if(other.hit){
+        life--;
+        hit = true;
+        if(life &lt;= 0){
+           actived = false;
+           alarm[1] = 120;
+           sprite_index = sp_knightDisabled;
         }
     }
-        
 }
-
-
-
 </string>
           </argument>
         </arguments>
