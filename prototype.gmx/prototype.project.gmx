@@ -19,6 +19,11 @@
     <sprite>sprites\sp_wall</sprite>
     <sprite>sprites\sp_shootIcon</sprite>
     <sprite>sprites\sp_slowMotion</sprite>
+    <sprite>sprites\sp_heart</sprite>
+    <sprite>sprites\sp_state1</sprite>
+    <sprite>sprites\sp_state2</sprite>
+    <sprite>sprites\sp_state3</sprite>
+    <sprite>sprites\sp_tnt</sprite>
     <sprites name="Ball">
       <sprite>sprites\sp_normalball</sprite>
       <sprite>sprites\sp_fireball</sprite>
@@ -45,18 +50,13 @@
       <sprite>sprites\sp_archer</sprite>
       <sprite>sprites\sp_archerDisabled</sprite>
     </sprites>
-    <sprite>sprites\sp_heart</sprite>
-    <sprite>sprites\sp_state1</sprite>
-    <sprite>sprites\sp_state2</sprite>
-    <sprite>sprites\sp_state3</sprite>
   </sprites>
   <backgrounds name="background">
-    <background>background\grass4</background>
-    <background>background\background4</background>
     <background>background\MainScreen</background>
-    <background>background\snow</background>
-    <background>background\volcano</background>
     <background>background\tile_ground</background>
+    <background>background\bkg_grass</background>
+    <background>background\bkg_snow</background>
+    <background>background\bkg_desert</background>
     <backgrounds name="pages">
       <background>background\Firstpage</background>
       <background>background\SecondPage</background>
@@ -95,6 +95,7 @@
       <object>objects\obj_slowMIcon</object>
       <object>objects\obj_shootIcon</object>
       <object>objects\obj_player2</object>
+      <object>objects\obj_tnt</object>
     </objects>
     <objects name="Controllers">
       <object>objects\obj_controller</object>
@@ -107,9 +108,9 @@
     </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\KnightLevel</room>
     <room>rooms\Start</room>
     <room>rooms\StoryPages</room>
-    <room>rooms\KnightLevel</room>
     <room>rooms\StoryPages2</room>
     <room>rooms\ArcherLevel</room>
     <room>rooms\StoryPages3</room>
