@@ -96,6 +96,7 @@
       <object>objects\obj_shootIcon</object>
       <object>objects\obj_player2</object>
       <object>objects\obj_tnt</object>
+      <object>objects\obj_shake</object>
     </objects>
     <objects name="Controllers">
       <object>objects\obj_controller</object>
@@ -108,9 +109,9 @@
     </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\KnightLevel</room>
     <room>rooms\Start</room>
     <room>rooms\StoryPages</room>
+    <room>rooms\KnightLevel</room>
     <room>rooms\StoryPages2</room>
     <room>rooms\ArcherLevel</room>
     <room>rooms\StoryPages3</room>
