@@ -108,13 +108,13 @@
     </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\MageLevel</room>
     <room>rooms\Start</room>
     <room>rooms\StoryPages</room>
     <room>rooms\KnightLevel</room>
     <room>rooms\StoryPages2</room>
     <room>rooms\ArcherLevel</room>
     <room>rooms\StoryPages3</room>
+    <room>rooms\MageLevel</room>
     <room>rooms\StoryPages4</room>
     <room>rooms\FinalLevel</room>
   </rooms>
