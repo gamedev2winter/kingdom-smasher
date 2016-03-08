@@ -31,6 +31,8 @@ hitCount = 0;
 life = 2;
 CDCount = 0;
 actived = true;
+LIVE = false;
+first = true;
 
 alarm[0] = irandom(40);
 </string>
@@ -80,20 +82,21 @@ sprite_index = sp_mage;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(actived){
+            <string>if(actived &amp;&amp; LIVE){
     CDCount++;
     if(CDCount &lt;= 2){
         with(instance_create(x+32,y+65,obj_iceball)){
             speed = 7;
             originalSpeed = speed;
-            var randomDirection;
+            direction = random_range(260,280);
+            /*var randomDirection;
             if(obj_player1.x &gt;= room_width/2){
                 randomDirection = random(room_width/2);
                 direction = point_direction(x,y,randomDirection,obj_player1.y);
             }else{
                 randomDirection = random(room_width/2)+room_width/2;
                 direction = point_direction(x,y,randomDirection,obj_player1.y);
-            }
+            }*/
         }
     } else if(CDCount == 4){
         CDCount = 0;
@@ -167,6 +170,13 @@ if(!global.slowMotion){
     if(hitCount &gt;=10){
         hitCount = 0;
         hit = false;
+    }
+}
+
+if (LIVE){
+    if(first){
+    alarm[0] = 1;
+    first = false;
     }
 }
 </string>
