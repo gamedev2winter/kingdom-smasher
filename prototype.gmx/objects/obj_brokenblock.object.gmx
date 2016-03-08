@@ -37,6 +37,8 @@
         }
         instance_destroy();
         effect_create_above(ef_explosion, x, y, 2, c_gray);
+        audio_play_sound(snd_explosion,1,false);
+        audio_sound_gain(snd_explosion,0.7,0);
     }
 } else if(y &gt; 500){//player block
     with (obj_pblock) {
@@ -49,6 +51,8 @@
     }
     instance_destroy();
     effect_create_above(ef_explosion, x, y, 2, c_gray);
+    audio_play_sound(snd_explosion,1,false);
+    audio_sound_gain(snd_explosion,0.7,0);
 }
 </string>
           </argument>
@@ -84,6 +88,8 @@
         }
         instance_destroy();
         effect_create_above(ef_explosion, x, y, 2, c_gray);
+        audio_play_sound(snd_explosion,1,false);
+        audio_sound_gain(snd_explosion,0.7,0);
     }
 } else if(y &gt; 500){//player block
     with (obj_pblock) {
@@ -96,6 +102,8 @@
     }
     instance_destroy();
     effect_create_above(ef_explosion, x, y, 2, c_gray);
+    audio_play_sound(snd_explosion,1,false);
+    audio_sound_gain(snd_explosion,0.7,0);
 }
 </string>
           </argument>
@@ -131,6 +139,8 @@
         }
         instance_destroy();
         effect_create_above(ef_explosion, x, y, 2, c_gray);
+        audio_play_sound(snd_explosion,1,false);
+        audio_sound_gain(snd_explosion,0.7,0);
         
     }
 } else if(y &gt; 500){//player block
@@ -144,6 +154,8 @@
     }
     instance_destroy();
     effect_create_above(ef_explosion, x, y, 2, c_gray);
+    audio_play_sound(snd_explosion,1,false);
+    audio_sound_gain(snd_explosion,0.7,0);
 }
 </string>
           </argument>

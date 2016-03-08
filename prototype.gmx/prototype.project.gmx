@@ -12,6 +12,10 @@
     <sound>sound\snd_StoryBook</sound>
     <sound>sound\snd_battle2</sound>
     <sound>sound\snd_battle3</sound>
+    <sound>sound\snd_playerHit</sound>
+    <sound>sound\snd_enemyHit</sound>
+    <sound>sound\snd_explosion</sound>
+    <sound>sound\snd_win</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\sp_block</sprite>
