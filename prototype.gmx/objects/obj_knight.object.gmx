@@ -206,6 +206,7 @@ if (LIVE){
     if(other.hit){
         life--;
         hit = true;
+        audio_play_sound(snd_knightHit,2,false);
         if(life &lt;= 0){
            actived = false;
            alarm[1] = 120;
@@ -239,6 +240,7 @@ if (LIVE){
     if(other.hit){
         life--;
         hit = true;
+        audio_play_sound(snd_knightHit,2,false);
         if(life &lt;= 0){
            actived = false;
            alarm[1] = 120;
@@ -272,6 +274,7 @@ if (LIVE){
     if(other.hit){
         life--;
         hit = true;
+        audio_play_sound(snd_knightHit,2,false);
         if(life &lt;= 0){
            actived = false;
            alarm[1] = 120;

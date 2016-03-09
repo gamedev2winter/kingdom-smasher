@@ -13,7 +13,9 @@
     <sound>sound\snd_battle2</sound>
     <sound>sound\snd_battle3</sound>
     <sound>sound\snd_playerHit</sound>
-    <sound>sound\snd_enemyHit</sound>
+    <sound>sound\snd_mageHit</sound>
+    <sound>sound\snd_knightHit</sound>
+    <sound>sound\snd_archerHit</sound>
     <sound>sound\snd_explosion</sound>
     <sound>sound\snd_win</sound>
   </sounds>
