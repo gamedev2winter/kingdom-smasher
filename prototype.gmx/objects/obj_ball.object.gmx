@@ -50,7 +50,9 @@ hit = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(global.slowMotion){
+            <string>if(global.pause){
+    speed = 0;
+}else if(global.slowMotion){
     speed = originalSpeed/2;
 }else{
     speed = originalSpeed;
@@ -65,7 +67,10 @@ hit = false;
 
 if(y &gt; 896) {
         instance_create(room_width/2-128,room_height/2-80,obj_message);
+        global.pause = true;
 }
+
+
 </string>
           </argument>
         </arguments>

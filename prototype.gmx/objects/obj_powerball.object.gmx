@@ -48,7 +48,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(global.slowMotion){
+            <string>if(global.pause){
+    speed = 0;
+}else if(global.slowMotion){
     speed = originalSpeed/2;
 }else{
     speed = originalSpeed;

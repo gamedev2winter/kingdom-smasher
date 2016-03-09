@@ -80,61 +80,38 @@ sprite_index = sp_mage;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(actived){
-    CDCount++;
-    if(CDCount &lt;= 2){
-        with(instance_create(x+32,y+65,obj_iceball)){
-            speed = 7;
-            originalSpeed = speed;
-            var randomDirection;
-            if(obj_player1.x &gt;= room_width/2){
-                randomDirection = random(room_width/2);
-                direction = point_direction(x,y,randomDirection,obj_player1.y);
-            }else{
-                randomDirection = random(room_width/2)+room_width/2;
-                direction = point_direction(x,y,randomDirection,obj_player1.y);
+            <string>if(!global.pause){
+
+    if(actived){
+        CDCount++;
+        if(CDCount &lt;= 2){
+            with(instance_create(x+32,y+65,obj_iceball)){
+                speed = 7;
+                originalSpeed = speed;
+                var randomDirection;
+                if(obj_player1.x &gt;= room_width/2){
+                    randomDirection = random(room_width/2);
+                    direction = point_direction(x,y,randomDirection,obj_player1.y);
+                }else{
+                    randomDirection = random(room_width/2)+room_width/2;
+                    direction = point_direction(x,y,randomDirection,obj_player1.y);
+                }
             }
+        } else if(CDCount == 4){
+            CDCount = 0;
         }
-    } else if(CDCount == 4){
-        CDCount = 0;
     }
+    if(!global.slowMotion){
+        time_ball = 40;
+    }else{
+        time_ball = 70;
+    }
+    alarm[0] = time_ball;
 }
-
-if(!global.slowMotion){
-    time_ball = 40;
-}else{
-    time_ball = 70;
-}
-
-
 
 
 
 </string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>301</id>
-        <kind>0</kind>
-        <userelative>-1</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_set_alarm</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>0</kind>
-            <string>time_ball</string>
-          </argument>
-          <argument>
-            <kind>4</kind>
-            <string>0</string>
           </argument>
         </arguments>
       </action>

@@ -82,34 +82,35 @@ sprite_index = sp_knight;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(actived &amp;&amp; LIVE){
-    var dir;
-    switch (shootsCount){
-        case 3: dir = 240; break;
-        case 2: dir = 270; break;
-        case 1: dir = 300; break;
+            <string>if(!global.pause){
+
+    if(actived &amp;&amp; LIVE){
+        var dir;
+        switch (shootsCount){
+            case 3: dir = 240; break;
+            case 2: dir = 270; break;
+            case 1: dir = 300; break;
+            }
+        
+        with(instance_create(x+32,y+65,obj_ball)){
+            speed = 5;
+            originalSpeed = speed;
+            direction = dir;
+        }
+        shootsCount--;
+        
+        if(shootsCount == 0){
+            shootsCount = 3;
         }
     
-    with(instance_create(x+32,y+65,obj_ball)){
-        speed = 5;
-        originalSpeed = speed;
-        direction = dir;
+        if(global.slowMotion){
+            time_ball = 80;
+        }else{
+            time_ball = 40;
+        }
+        alarm[0] = time_ball;
     }
-    shootsCount--;
-    
-    if(shootsCount == 0){
-        shootsCount = 3;
-    }
-
-    if(global.slowMotion){
-        time_ball = 80;
-    }else{
-        time_ball = 40;
-    }
-    alarm[0] = time_ball;
 }
-
-
 
 
 </string>

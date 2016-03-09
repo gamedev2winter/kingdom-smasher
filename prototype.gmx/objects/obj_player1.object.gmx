@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>player_sprite = 1;
+            <string>global.pause = false;
+
+player_sprite = 1;
 playerSpriteHit = sp_antiKnightHit;
 playerSpriteReflect = sp_antiKnightReflect;
 pSpeed = 8;
@@ -197,6 +199,7 @@ if(slowM_count == 10){
     if(image_index == 5){
         image_speed = 0;
         instance_create(room_width/2-128,room_height/2-80,obj_message);
+        global.pause = true;
     }
 }
 
@@ -240,6 +243,7 @@ if(tnts == 0 &amp;&amp; !win){
     win = true;
     audio_sound_gain(battleSound,0.4,0);
     instance_create(room_width/2-128,room_height/2-80,obj_winMessage);
+    global.pause = true;
 }
 
 
