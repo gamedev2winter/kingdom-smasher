@@ -1,4 +1,4 @@
-with obj_enemiesController alarm[4] = 180;
+with obj_enemiesController alarm[4] = 120;
 var objects = instance_number(obj_knight);
 inst = instance_find(obj_knight, irandom(objects - 1));
 

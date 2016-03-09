@@ -55,16 +55,15 @@ hit = false;
     speed = originalSpeed;
 }
 
-if(y &lt; 0) {
+/*if(y &lt; 0) {
     show_message("Level Complete!");
     if room_next(room) != -1{
         room_goto(room_next(room));
     }
-}
+}*/
 
 if(y &gt; 896) {
-    show_message("You Lose!");
-    room_restart();
+        instance_create(room_width/2-128,room_height/2-80,obj_message);
 }
 </string>
           </argument>

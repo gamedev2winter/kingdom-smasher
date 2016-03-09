@@ -102,9 +102,9 @@ sprite_index = sp_knight;
     }
 
     if(global.slowMotion){
-        time_ball = 100;
+        time_ball = 80;
     }else{
-        time_ball = 60;
+        time_ball = 40;
     }
     alarm[0] = time_ball;
 }

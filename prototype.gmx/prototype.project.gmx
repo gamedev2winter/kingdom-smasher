@@ -54,6 +54,13 @@
       <sprite>sprites\sp_archer</sprite>
       <sprite>sprites\sp_archerDisabled</sprite>
     </sprites>
+    <sprites name="UI">
+      <sprite>sprites\sp_loseMessage</sprite>
+      <sprite>sprites\sp_winMessage</sprite>
+      <sprite>sprites\sp_exitButton</sprite>
+      <sprite>sprites\sp_continueButton</sprite>
+      <sprite>sprites\sp_restartButton</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\MainScreen</background>
@@ -91,6 +98,8 @@
     <object>objects\obj_brokenblock</object>
     <object>objects\obj_eblock</object>
     <object>objects\obj_pblock</object>
+    <object>objects\obj_tnt</object>
+    <object>objects\obj_shake</object>
     <objects name="miscellaneous">
       <object>objects\obj_state1</object>
       <object>objects\obj_state2</object>
@@ -98,9 +107,11 @@
       <object>objects\obj_heart</object>
       <object>objects\obj_slowMIcon</object>
       <object>objects\obj_shootIcon</object>
-      <object>objects\obj_player2</object>
-      <object>objects\obj_tnt</object>
-      <object>objects\obj_shake</object>
+      <object>objects\obj_message</object>
+      <object>objects\obj_winMessage</object>
+      <object>objects\obj_restartButton</object>
+      <object>objects\obj_exitButton</object>
+      <object>objects\obj_continueButton</object>
     </objects>
     <objects name="Controllers">
       <object>objects\obj_controller</object>
