@@ -1252,7 +1252,7 @@ audio_play_sound(snd_switchState, 5, false);
 if(power_munition &lt; 0){
     power_up = false;
     power_count = 0;
-    power_munition = 3;
+    power_munition = 2;
     with(obj_shootIcon){
         image_index = 1;
     }

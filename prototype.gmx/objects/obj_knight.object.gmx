@@ -120,9 +120,9 @@ sprite_index = sp_knight;
             originalSpeed = speed;
             direction = dir;
         }
-   	posY = y;
-   	y = y - 5;
-   	alarm[2] = 10;
+   posY = y;
+   y = y - 5;
+   alarm[2] = 3;
         shootsCount--;
         
         if(shootsCount == 0){
