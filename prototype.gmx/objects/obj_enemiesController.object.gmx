@@ -50,6 +50,9 @@
             <kind>1</kind>
             <string>with obj_knight LIVE = false;
 KnightScr();
+
+with obj_mage LIVE = false;
+MageScr();
 </string>
           </argument>
         </arguments>
