@@ -257,9 +257,9 @@ if(!canSlowMotion){
 }
 
 if(player_sprite == 1){
-    pSpeed = 12;
+    pSpeed = 15;
 }else{
-    pSpeed = 8;
+    pSpeed = 10;
 }
 
 var tnts = instance_number(obj_tnt);

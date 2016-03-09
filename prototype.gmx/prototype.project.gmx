@@ -127,6 +127,7 @@
     </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\FinalLevel</room>
     <room>rooms\Start</room>
     <room>rooms\StoryPages</room>
     <room>rooms\KnightLevel</room>
@@ -135,7 +136,6 @@
     <room>rooms\StoryPages3</room>
     <room>rooms\MageLevel</room>
     <room>rooms\StoryPages4</room>
-    <room>rooms\FinalLevel</room>
   </rooms>
   <constants number="2">
     <constant name="GM_build_date">42394.8725814468</constant>

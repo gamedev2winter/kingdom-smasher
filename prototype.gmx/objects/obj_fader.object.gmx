@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>background_alpha = 1
+audio_stop_all();
 </string>
           </argument>
         </arguments>
