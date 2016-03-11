@@ -365,7 +365,7 @@ if(tnts == 0 &amp;&amp; !win){
             <string>reflect = true;
 audio_play_sound(snd_reflect, 5, false);
 
-if(!power_up){
+if(!power_up &amp;&amp; !other.hit){
     power_count++;
 }
 
@@ -375,10 +375,10 @@ with(other){
 }
 
 if(!pushed){
-posY = y
-y = y + 5;
-alarm[1] = 3;
-pushed = true;
+    posY = y
+    y = y + 5;
+    alarm[1] = 3;
+    pushed = true;
 }
 
 
@@ -561,7 +561,7 @@ if(lives == 0){
             <string>reflect = true;
 audio_play_sound(snd_reflect, 5, false);
 
-if(!canSlowMotion &amp;&amp; !cooldown){
+if(!canSlowMotion &amp;&amp; !cooldown &amp;&amp; !other.hit){
     slowMP_count++;
 }
 with(other){
