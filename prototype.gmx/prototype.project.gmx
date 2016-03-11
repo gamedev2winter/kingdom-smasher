@@ -127,7 +127,6 @@
     </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\FinalLevel</room>
     <room>rooms\Start</room>
     <room>rooms\StoryPages</room>
     <room>rooms\KnightLevel</room>
@@ -135,6 +134,7 @@
     <room>rooms\ArcherLevel</room>
     <room>rooms\StoryPages3</room>
     <room>rooms\MageLevel</room>
+    <room>rooms\FinalLevel</room>
     <room>rooms\StoryPages4</room>
   </rooms>
   <constants number="2">

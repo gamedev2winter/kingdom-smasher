@@ -97,10 +97,12 @@
             <kind>1</kind>
             <string>if(other.hit){
     instance_destroy();
-    with(other){
-        instance_destroy();
-    }
     effect_create_below(ef_explosion, x, y, 0, c_gray);
+    with(other){
+        if(object_get_name(other) != "obj_archer"){
+            instance_destroy();
+        }
+    }
 }
 </string>
           </argument>
@@ -126,10 +128,12 @@
             <kind>1</kind>
             <string>if(other.hit){
     instance_destroy();
-    with(other){
-        instance_destroy();
-    }
     effect_create_below(ef_explosion, x, y, 0, c_gray);
+    with(other){
+        if(object_get_name(other) != "obj_archer"){
+            instance_destroy();
+        }
+    }
 }
 </string>
           </argument>
@@ -179,7 +183,9 @@ if(other.hit){
     count = 0;
     instance_destroy();
     with(other){
-        instance_destroy();
+        if(object_get_name(other) != "obj_archer"){
+            instance_destroy();
+        }
     }
     effect_create_below(ef_explosion, x, y, 1, c_gray);
 }
