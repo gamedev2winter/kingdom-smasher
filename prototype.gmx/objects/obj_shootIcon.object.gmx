@@ -27,6 +27,46 @@
             <kind>1</kind>
             <string>image_speed = 0;
 image_index = 1;
+flash = false;
+flashCount = 0;
+first = true;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>flashCount++;
+
+if(flashCount % 2 != 0){
+    image_index = 1;
+}else{
+    image_index = 0;
+}
+
+if(flashCount &gt; 5){
+    flashCount = 0;
+    flash = false;
+    first = true;
+}else{
+    alarm[0] = 2;
+}
 </string>
           </argument>
         </arguments>
@@ -51,6 +91,12 @@ image_index = 1;
             <kind>1</kind>
             <string>x = obj_player1.x+32;
 y = obj_player1.y+65;
+
+if(flash &amp;&amp; first){
+    image_index = 0;
+    alarm[0] = 2;
+    first = false;
+}
 </string>
           </argument>
         </arguments>

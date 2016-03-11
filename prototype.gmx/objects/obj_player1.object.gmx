@@ -235,10 +235,11 @@ if(hitCount &gt;=10){
 }
 
 
-if (power_count &gt;= 5 &amp;&amp; player_sprite == 2){
+if (power_count == 5 &amp;&amp; player_sprite == 2){
     with(obj_shootIcon){
-        image_index = 0;
+        flash = true;
     }
+    power_count++;
     power_up = true;
 }
 
