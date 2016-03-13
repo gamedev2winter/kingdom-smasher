@@ -51,11 +51,10 @@ power_up = false;
 //slow Motion Power
 global.slowMotion = false;
 canSlowMotion = false;
-slowM_count = 15;
+slowM_count = 10;
 slowMP_count = 0;
-cooldown = false;
 audio_stop_all();
-
+/**/
 if(room_get_name(room) == "KnightLevel" || room_get_name(room) == "ArcherLevel"){
     battleSound = snd_battle2;
     audio_sound_gain(snd_battle2,0,0);
@@ -142,12 +141,18 @@ pushed = false;
             <string>slowM_count--;
 if(slowM_count &gt;= 0){
     alarm[0] = 30;
+    with(obj_slowMIcon){
+        countDown--;
+    }
 }else{
-    slowM_count = 15;
+    slowM_count = 10;
     slowMP_count =0;
-    cooldown = false;
+    with(obj_slowMIcon){
+        coolDown = false;
+        countDown = 10;
+    }
 }
-if(slowM_count == 10){
+if(slowM_count == 5){
     global.slowMotion = false;
 }
 </string>
@@ -247,7 +252,7 @@ if (slowMP_count &gt;= 5){
     canSlowMotion = true;
     slowMP_count = 0;
     with(obj_slowMIcon){
-        image_index = 0;
+        flash = true;
     }
 }
 
@@ -562,7 +567,7 @@ if(lives == 0){
             <string>reflect = true;
 audio_play_sound(snd_reflect, 5, false);
 
-if(!canSlowMotion &amp;&amp; !cooldown &amp;&amp; !other.hit){
+if(!canSlowMotion &amp;&amp; !obj_slowMIcon.coolDown &amp;&amp; !other.hit){
     slowMP_count++;
 }
 with(other){
@@ -1404,33 +1409,6 @@ audio_play_sound(snd_switchState, 5, false);
     <event eventtype="8" enumb="64">
       <action>
         <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if(instance_exists(obj_slowMIcon)){
-    if(cooldown){
-        draw_text(obj_slowMIcon.x+5, obj_slowMIcon.y+9, slowM_count);
-    }else{
-        draw_text(obj_slowMIcon.x+5, obj_slowMIcon.y+9, " ");
-    }
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
         <id>714</id>
         <kind>0</kind>
         <userelative>-1</userelative>
@@ -1511,11 +1489,11 @@ if(power_munition &lt; 0){
 if(!global.slowMotion &amp;&amp; player_sprite == 3 &amp;&amp; canSlowMotion){
     global.slowMotion = true;
     alarm[0] = 30;
-    cooldown = true;
-    canSlowMotion = false;
     with(obj_slowMIcon){
+        coolDown = true;
         image_index = 1;
     }
+    canSlowMotion = false;
 }
 </string>
           </argument>

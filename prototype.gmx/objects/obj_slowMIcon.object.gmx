@@ -3,7 +3,7 @@
   <spriteName>sp_slowMotion</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-1</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -27,6 +27,48 @@
             <kind>1</kind>
             <string>image_speed = 0;
 image_index = 0;
+flash = false;
+flashCount = 0;
+first = true;
+coolDown = false;
+countDown = 10;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>flashCount++;
+
+if(flashCount % 2 != 0){
+    image_index = 1;
+}else{
+    image_index = 0;
+}
+
+if(flashCount &gt; 5){
+    flashCount = 0;
+    flash = false;
+    first = true;
+}else{
+    alarm[0] = 2;
+}
 </string>
           </argument>
         </arguments>
@@ -51,6 +93,41 @@ image_index = 0;
             <kind>1</kind>
             <string>x = obj_player1.x;
 y = obj_player1.y+65;
+
+if(flash &amp;&amp; first){
+    image_index = 0;
+    alarm[0] = 2;
+    first = false;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>draw_self();
+
+if(coolDown){
+    draw_text(x+5,y+9, countDown);
+}else{
+    draw_text(x+5,y+9, "");
+}
 </string>
           </argument>
         </arguments>
