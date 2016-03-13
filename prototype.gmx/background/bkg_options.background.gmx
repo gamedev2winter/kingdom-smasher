@@ -13,7 +13,7 @@
     <TextureGroup0>0</TextureGroup0>
   </TextureGroups>
   <For3D>0</For3D>
-  <width>1052</width>
+  <width>1152</width>
   <height>896</height>
-  <data>images\MainScreen.png</data>
+  <data>images\bkg_options.png</data>
 </background>
