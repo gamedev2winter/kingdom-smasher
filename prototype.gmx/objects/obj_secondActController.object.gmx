@@ -105,6 +105,8 @@ audio_sound_gain(snd_StoryBook,1,4000);
 if( count == 1){
     background_index[0] = SecondAct;
 } else if( count == 2){
+    background_index[0] = PowerUpsPage;
+}else if(count == 3){
     audio_sound_gain(snd_StoryBook, 0, 1000);
     alarm[0] = 30;
 }
@@ -160,6 +162,8 @@ if( count == 1){
 if( count == 1){
     background_index[0] = SecondAct;
 } else if( count == 2){
+    background_index[0] = PowerUpsPage;
+}else if(count == 3){
     audio_sound_gain(snd_StoryBook, 0, 1000);
     alarm[0] = 30;
 }

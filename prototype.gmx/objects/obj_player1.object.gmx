@@ -241,6 +241,7 @@ if(hitCount &gt;=10){
 
 
 if (power_count == 5 &amp;&amp; player_sprite == 2){
+    audio_play_sound(snd_shootingIcon, 5, false);
     with(obj_shootIcon){
         flash = true;
     }
@@ -251,6 +252,7 @@ if (power_count == 5 &amp;&amp; player_sprite == 2){
 if (slowMP_count &gt;= 5){
     canSlowMotion = true;
     slowMP_count = 0;
+    audio_play_sound(snd_slowMotionIcon, 5, false);
     with(obj_slowMIcon){
         flash = true;
     }

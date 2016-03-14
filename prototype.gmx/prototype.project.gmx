@@ -18,6 +18,8 @@
     <sound>sound\snd_archerHit</sound>
     <sound>sound\snd_explosion</sound>
     <sound>sound\snd_win</sound>
+    <sound>sound\snd_shootingIcon</sound>
+    <sound>sound\snd_slowMotionIcon</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\sp_block</sprite>
@@ -30,7 +32,7 @@
     <sprite>sprites\sp_state2</sprite>
     <sprite>sprites\sp_state3</sprite>
     <sprite>sprites\sp_tnt</sprite>
-    <sprites name="Ball">
+    <sprites name="Projectiles">
       <sprite>sprites\sp_normalball</sprite>
       <sprite>sprites\sp_fireball</sprite>
       <sprite>sprites\sp_iceball</sprite>
@@ -73,6 +75,7 @@
     <background>background\bkg_grass</background>
     <background>background\bkg_snow</background>
     <background>background\bkg_desert</background>
+    <background>background\bkg_options</background>
     <backgrounds name="pages">
       <background>background\Firstpage</background>
       <background>background\SecondPage</background>
@@ -84,8 +87,9 @@
       <background>background\ThirdAct</background>
       <background>background\FinalActMap</background>
       <background>background\FinalAct</background>
+      <background>background\EndPage</background>
+      <background>background\PowerUpsPage</background>
     </backgrounds>
-    <background>background\bkg_options</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -126,7 +130,7 @@
     <objects name="Controllers">
       <object>objects\obj_controller</object>
       <object>objects\obj_enemiesController</object>
-      <object>objects\obj_mainControler</object>
+      <object>objects\obj_EndControler</object>
       <object>objects\obj_fader</object>
       <object>objects\obj_secondActController</object>
       <object>objects\obj_thirdAcrController</object>
@@ -142,8 +146,9 @@
     <room>rooms\ArcherLevel</room>
     <room>rooms\StoryPages3</room>
     <room>rooms\MageLevel</room>
+    <room>rooms\StoryPages4</room>
     <room>rooms\FinalLevel</room>
-    <room>rooms\FinalLevel</room>
+    <room>rooms\EndGame</room>
   </rooms>
   <constants number="2">
     <constant name="GM_build_date">42394.8725814468</constant>
