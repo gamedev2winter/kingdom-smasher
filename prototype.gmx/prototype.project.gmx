@@ -95,6 +95,7 @@
   <scripts name="scripts">
     <script>scripts\KnightScr.gml</script>
     <script>scripts\MageScr.gml</script>
+    <script>scripts\ExplodeCastle.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\obj_ball</object>
@@ -126,6 +127,7 @@
       <object>objects\obj_start</object>
       <object>objects\obj_options</object>
       <object>objects\obj_exit</object>
+      <object>objects\obj_explodeCastleAlarm</object>
     </objects>
     <objects name="Controllers">
       <object>objects\obj_controller</object>

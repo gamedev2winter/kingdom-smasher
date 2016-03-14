@@ -160,24 +160,38 @@
             <string>var count = 0;
 
 if(other.hit){
-    if(instance_position(x-32, y, obj_eblock)){
+    var inst;
+    inst = instance_position(x-32, y, obj_eblock);
+    if(instance_exists(inst)){
         count =  count + 1;
-        position_destroy(x-32, y);
+        with(inst){
+            instance_destroy();
+        }
+    }
     
-    }
-    if(instance_position(x+32, y, obj_eblock)){
-        count = count + 1;    
-        position_destroy(x+32, y);
-    }
-    if(count &lt; 2) {
-            if(instance_position(x-16, y+16, obj_eblock)){
-                count = count + 1;
-                position_destroy(x-16, y+16);
+    inst = instance_position(x+32, y, obj_eblock);
+        if(instance_exists(inst)){
+            count =  count + 1;
+            with(inst){
+                instance_destroy();
             }
+        }
+    if(count &lt; 2) {
+        inst = instance_position(x-16, y+16, obj_eblock);
+        if(instance_exists(inst)){
+            count =  count + 1;
+            with(inst){
+                instance_destroy();
+            }
+        }
     }
     if(count &lt; 2) {
-        if(instance_position(x+16, y+16, obj_eblock)) {
-            position_destroy(x+16, y+16);
+        inst = instance_position(x+16, y+16, obj_eblock);
+        if(instance_exists(inst)){
+            count =  count + 1;
+            with(inst){
+                instance_destroy();
+            }
         }
     }
     count = 0;
